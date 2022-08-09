@@ -4,5 +4,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
   [SerializeField] private Date _date;
-  public void Click(){_date.DataPlus();}
+  public void Click(){
+    _date.DataPlus();
+    }
 }
