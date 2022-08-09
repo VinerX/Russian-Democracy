@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-37.4357,"y":209.9247},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":60.0},"guid":"062c3349-2566-4a13-9416-edb0a9d429ba","$version":"A","$type":"Bolt.Update","$id":"9"},{"chainable":false,"member":{"name":"Rotate","parameterTypes":["UnityEngine.Vector3","System.Single"],"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null,"%axis":{"x":1.0,"y":1.0,"z":1.0,"$type":"UnityEngine.Vector3"},"%angle":{"$content":0.1,"$type":"System.Single"}},"position":{"x":28.0,"y":20.0},"guid":"be5e6c48-55d8-4440-8403-00948cd4c0d4","$version":"A","$type":"Bolt.InvokeMember"},{"chainable":false,"member":{"name":"localScale","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null,"input":{"x":55.0,"y":55.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":-6.0,"y":141.0},"guid":"8c2c4b50-2ccc-4974-af91-032347653ea1","$version":"A","$type":"Bolt.SetMember","$id":"14"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"assign","guid":"2bcf3fbd-e09d-48d1-b892-5e760e54f1ef","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []

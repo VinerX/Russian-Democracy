@@ -1,0 +1,265 @@
+#START#A0001 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+COLOR_CHANGE_START:255.255.255.255#   0,5#0,5#1  #COLOR_CHANGE_END.
+
+SPEAKER_START:
+Мать
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+
+TEXT_START:
+Сынок, ну не нужно тебе этого, не нужно, какая война, тебе всего 18 лет, ты наш единственный сын. Вить, ну хоть ты ему скажи! Давай дадим взятку в военкомате, возможно есть шанс спасти его от этой войны, ну не его это, не его путь!
+TEXT_END.
+
+BG_START:
+Backgrounds/Alexsandr/HOME1
+BG_END.
+
+MUSIC_MODE: 
+PLAY
+MUSIC_MODE_END.
+
+MUSIC:
+Music/Kino/SoundWithoutWords
+MUSIC_END.
+
+TIME_START:
+Март 1994
+TIME__END.
+
+PERSONS_START:
+
+PERSONS_COUNT:1
+PERSONS_COUNT_END.
+
+-PERSON_START_1
+COMMAND_START:CREATE  COMMAND_END.
+PERSON_NAME_START:MOTHER PERSON_NAME_END.
+SPRITE_START:Persons/Mat/Mat 1 SPRITE_END.
+SIZE_START:1,4#1,4 SIZE_END.
+POSITION_START:0,5#0,45 POSITION_END.
+
+-PERSON_END_1.
+
+
+PERSONS_END.
+
+#END#A0001
+
+#START#A0002
+
+TYPE_START:
+TXT
+TYPE_END.
+
+BG_CHANGE_START:
+NONE
+BG_CHANGE_END.
+
+TEXT_START:
+~Я так и знал, это не удивительно, что она протестует, она будет переживать, но кто если не такие ребята как я поедут отстаивать свою Родину~
+TEXT_END.
+
+SPEAKER_START:
+Александр
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+#END#A0002 
+
+#START#A0003
+
+TEXT_START:
+~Отец должен меня поддержать, но пока что он только молча прислонял кружку крепкого кофе к губам, над которыми виднелись уже седые усы, окрашивающиеся в цвет кофе, каждый раз, когда он опрокидывал кружку чуть выше угла в 90 градусов~
+TEXT_END.
+
+PERSONS_START:
+
+PERSONS_COUNT:2
+PERSONS_COUNT_END.
+
+-PERSON_START_FATHER
+COMMAND_START:CREATE  COMMAND_END.
+PERSON_NAME_START:FATHER PERSON_NAME_END.
+SPRITE_START: Persons/Father/Father SPRITE_END.
+SIZE_START:1,3#1,3 SIZE_END.
+POSITION_START:0,25#0,4 POSITION_END.
+
+-PERSON_END_FATHER
+
+-PERSON_START_1
+COMMAND_START:CHANGE  COMMAND_END.
+PERSON_NAME_START:MOTHER PERSON_NAME_END.
+SPRITE_START: Persons/Mat/Mat 1 SPRITE_END.
+SIZE_START:1,2#1,2 SIZE_END.
+MOVETIME_START:2 MOVETIME_END.
+POSITION_START:0,65#0,4 POSITION_END.
+
+-PERSON_END_1.
+
+PERSONS_END.
+
+#END#A0003 
+
+#START#A0003
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+Мать, он уже мужчина, и каждый мужчина должен выбрать свой путь сам. Так что, вопрос закрыт, если он выбирает этот путь, я полностью его поддерживаю. Решать только ему, если он хочет избежать этого пути, я попробую подключить связи.
+TEXT_END.
+
+SPEAKER_START:
+Отец
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.255.000.255 SPEAKER_COLOR_END:
+
+PERSONS_START:
+
+PERSONS_COUNT:2
+PERSONS_COUNT_END.
+
+-PERSON_START_1
+COMMAND_START:CHANGE  COMMAND_END.
+PERSON_NAME_START:FATHER PERSON_NAME_END.
+SPRITE_START: Persons/Father/Father SPRITE_END.
+SIZE_START:1,4#1,4 SIZE_END.
+MOVETIME_START:1 MOVETIME_END.
+POSITION_START:0,35#0,4 POSITION_END.
+
+-PERSON_END_1.
+
+-PERSON_START_2
+COMMAND_START:CHANGE  COMMAND_END.
+PERSON_NAME_START:MOTHER PERSON_NAME_END.
+SPRITE_START: Persons/Mat/Mat 1 SPRITE_END.
+SIZE_START:1,1#1,1 SIZE_END.
+MOVETIME_START:1 MOVETIME_END.
+POSITION_START: 0,75#0,4 POSITION_END.
+SPRITE_COLOR: 255#255#255#255 SPRITE_COLOR_END.
+
+-PERSON_END_2
+
+PERSONS_END.
+
+#END#A0003 
+
+#START#F0000 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TYPE_START:
+CHOICE
+TYPE_END.
+
+ANSWERS_COUNT:5
+
+
+ANSWER_START_1:
+
+CONDITIONS_COUNT:0
+
+COND_S:TIMES@>@1 COND_END_1.
+
+ANSWER_COLOR_START:000.255.000.255
+
+ANSWER_TEXT_START:
+Я пойду!
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\Alexander A\Alexander A 1
+NEXT_FILE_END.
+
+ANSWER_END_1.
+
+
+ANSWER_START_2:
+
+CONDITIONS_COUNT:1
+
+COND_S:CORRUPTION@>=@75 COND_END_1.
+SECRET_CHOICE
+ANSWER_COLOR_START:255.255.000.255
+
+ANSWER_TEXT_START:
+Взятка точно поможет
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_2.
+
+ANSWER_START_3:
+
+CONDITIONS_COUNT:2
+
+COND_S:CORRUPTION@>=@35 COND_END_1.
+COND_S:CORRUPTION@<@75 COND_END_2.
+SECRET_CHOICE
+ANSWER_COLOR_START:255.000.000.255
+
+ANSWER_TEXT_START:
+Рискованно, но давайте попробуем дать взятку...
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_3.
+
+ANSWER_START_4:
+
+
+CONDITIONS_COUNT:1
+
+
+COND_S:CORRUPTION@<@35 COND_END_2.
+SECRET_CHOICE
+ANSWER_COLOR_START:255.000.000.255
+
+ANSWER_TEXT_START:
+Очень рискованно, но давайте попробуем дать взятку...
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_4.
+
+ANSWER_START_5:
+
+
+CONDITIONS_COUNT:0
+
+ANSWER_COLOR_START:255.000.000.255
+
+ANSWER_TEXT_START:
+Верните меня на ветку влада!
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes/FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_5.
+
+#END#Finall
+!FULLEND!

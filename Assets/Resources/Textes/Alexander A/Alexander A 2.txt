@@ -1,0 +1,48 @@
+#START# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+CLEAN_PERSONS
+
+TEXT_START:
+~ Волнение не оставляло ни меня, ни отца. Мы решили закурить. ~
+TEXT_END.
+
+SPEAKER_START:
+Александр
+SPEAKER_END.
+
+BG_START:
+Backgrounds/Alexsandr/TrainStation
+BG_END.
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+COLOR_CHANGE_START:000.000.000.255#   1#3#1  #COLOR_CHANGE_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+TIME_START:
+Март 1994
+TIME__END.
+
+PERSONS_START:
+PERSONS_COUNT:1
+PERSONS_COUNT_END.
+
+-PERSON_START_1
+COMMAND_START: CREATE  COMMAND_END.
+PERSON_NAME_START:FATHER PERSON_NAME_END.
+SPRITE_START: Persons/Father/Father SPRITE_END.
+SIZE_START:1,3#1,3 SIZE_END.
+POSITION_START:0,5#0,31 POSITION_END.
+
+-PERSON_END_1.
+
+PERSONS_END.
+
+#END#

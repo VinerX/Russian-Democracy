@@ -1,0 +1,156 @@
+#START#A0001 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+COLOR_CHANGE_START:000.000.000.255#   0#0#2  #COLOR_CHANGE_END.
+
+BG_POS\SIZE: 2#2#0#0 BG_POS\SIZE_END.
+BG_ANIM: 1#1#0#0#7 BG_ANIM_END.
+SPEAKER_START:
+...
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+
+TEXT_START:
+Молодой парень, совсем юнец, жизни не видавший.
+TEXT_END.
+
+BG_START:
+Backgrounds/Alexsandr/CECHNIA1
+BG_END.
+
+MUSIC_MODE: 
+PLAY
+MUSIC_MODE_END.
+
+MUSIC:
+Embient/WarSounds1
+MUSIC_END.
+
+MUSIC:
+PLAY
+MUSIC_END.
+
+EMBIENT_MODE: 
+PLAY
+EMBIENT_MODE_END: 
+
+EMBIENT:
+Embient/Wind1
+EMBIENT_END.
+
+SOUNDEFFECT_:
+NONE
+SOUNDEFFECT_END: 
+
+TIME_START:
+1995
+TIME__END.
+
+#END#A0001
+
+#START#A0002 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+BG_CHANGE_START:
+NONE
+BG_CHANGE_END.
+
+TEXT_START:
+Голубые глаза, русые волосы, примерный ученик одной из московских школ.
+С детства рос в полной и любящей семье, родители подарили ему любовь к родине с детства... отплатило ли оно ему этим же...
+TEXT_END.
+
+
+#END#A0002
+
+
+#START#A0003 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+BG_CHANGE_START:
+STANDART
+BG_CHANGE_END.
+
+STANDART_CHANGE_START: 1 #
+
+BG_START:
+Backgrounds/Alexsandr/CECHNIA2
+BG_END.
+
+BG_POS\SIZE: 2#2#0,5#0 BG_POS\SIZE_END.
+BG_ANIM: 1#1#0#0#7 BG_ANIM_END.
+
+
+TEXT_START:
+...спорный, конечно, вопрос, но так сложилась судьба многих ребят его возраста...
+Человек останется человеком даже после конца света, до конца будет грызть себе подобных, снова и снова, возвращаясь к понятию - Война.С детства рос в полной и любящей семье, родители подарили ему любовь к родине с детства... отплатило ли оно ему этим же...
+TEXT_END.
+
+
+#END#A0003
+
+
+#START#A0003 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+Пожалуй, самое ужасное это война патриотов, навязанные интересы страны, которые переходят в личные.Человек останется человеком даже после конца света, до конца будет грызть себе подобных, снова и снова, возвращаясь к понятию - Война.С детства рос в полной и любящей семье, родители подарили ему любовь к родине с детства... отплатило ли оно ему этим же...
+TEXT_END.
+
+MUSIC_MODE: 
+STOP
+MUSIC_MODE_END.
+#END#A0003
+
+#START#
+
+TYPE_START:
+ART
+TYPE_END.
+
+BG_CHANGE_START:
+STANDART
+BG_CHANGE_END.
+
+STANDART_CHANGE_START: 2 #
+
+BG_START:
+Backgrounds/Alexsandr/ZABIRHALI
+BG_END.
+#END#
+
+
+#START#Finall ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+END
+TYPE_END.
+
+NEXT_FILE_START:
+Textes/Alexander2
+NEXT_FILE_END.
+
+#END#Finall
+
+
+!FULLEND!
+
+

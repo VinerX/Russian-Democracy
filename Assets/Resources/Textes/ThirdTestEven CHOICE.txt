@@ -1,0 +1,66 @@
+#START#F0000 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TYPE_START:
+CHOICE
+TYPE_END.
+
+ANSWERS_COUNT:3
+
+
+ANSWER_START_1:
+
+CONDITIONS_COUNT:1
+
+COND_S:TIMES@>@1 COND_END_1.
+SECRET_CHOICE
+ANSWER_COLOR_START:255.000.000.255
+
+ANSWER_TEXT_START:
+Я это уже видел. День Сурка?..
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_1.
+
+
+ANSWER_START_2:
+
+CONDITIONS_COUNT:0
+
+ANSWER_COLOR_START:255.255.000.255
+
+ANSWER_TEXT_START:
+Ладно, иду...
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_2.
+
+ANSWER_START_3:
+
+CONDITIONS_COUNT:1
+
+COND_S:TIMES@>@2 COND_END_1.
+SECRET_CHOICE
+
+ANSWER_COLOR_START:155.155.000.255
+
+ANSWER_TEXT_START:
+СПАСИТЕ!!!
+ANSWER_TEXT_END.
+
+NEXT_FILE_START:
+Textes\FirstTestEvent
+NEXT_FILE_END.
+
+ANSWER_END_3.
+
+#END#Finall
+!FULLEND!

@@ -1,0 +1,221 @@
+#START#F0001 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+CLEAN_PERSONS
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+COLOR_CHANGE_START:255.255.255.255#   1#0#1  #COLOR_CHANGE_END.
+
+SPEAKER_START:
+Слушатель
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.255.255 SPEAKER_COLOR_END:
+
+
+TEXT_START:
+~ По телевизору шел Ельцин. За это десятилетие он изрядно постарел (оно и понятно, столько пить!). Поговаривают, что на этой трансляции он скажет что-то очень важное для страны... ~
+TEXT_END.
+
+BG_START:
+Backgrounds/BG_TV
+BG_END.
+
+BG_EFFECT_START: 
+NONE
+BG_EFFECT_END.
+
+TIME_START:
+Декабрь 1999
+TIME__END.
+
+
+
+PERSONS_START:
+
+PERSONS_COUNT:0
+PERSONS_COUNT_END.
+
+PERSONS_END.
+
+#END#F0001
+
+
+#START#F0002 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+SPEAKER_START:
+Ельцин Б.Н.
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+TEXT_START:
+~ Дорогие россияне!
+Осталось совсем немного времени до магической даты в нашей истории: наступает 2000 год, новый век, новое тысячелетие...
+TEXT_END.
+
+BG_START:
+Backgrounds/stress
+BG_END.
+
+BG_EFFECT_START: 
+Video (Effects)/TV 
+BG_EFFECT_END.
+
+BG_EFFECT_CHANGE: 2 # 0.5 # 1 #
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+TIME_START:
+Декабрь 1999
+TIME__END.
+
+MUSIC_MODE: 
+PLAY
+MUSIC_MODE_END.
+
+MUSIC:
+Music/Kino/Knock(Kino)
+MUSIC_END.
+
+PERSONS_START:
+
+PERSONS_COUNT:0
+PERSONS_COUNT_END.
+
+PERSONS_END.
+
+#END#F0002
+
+COLOR_CHANGE_START:255.255.255.255#   0,5#0#0,5   #COLOR_CHANGE_END.
+
+#START#F0003 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+SPEAKER_START:
+Слушатель 
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.255.255.255 SPEAKER_COLOR_END:
+
+TEXT_START:
+~ Новое тысячелетие так-то с единицы начнется. Лишь бы лозунг сказать.! ~
+TEXT_END.
+
+BG_START:
+Backgrounds/BG_TV
+BG_END.
+
+
+BG_EFFECT_START: 
+NONE
+BG_EFFECT_END.
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+
+TIME_START:
+Декабрь 1999
+TIME__END.
+
+MUSIC_START:
+Assets/OST RD/DDT/Rain (DDT).mp3
+MUSIC__END.
+
+ANIMATIONS_START:
+NONE
+ANIMATIONS_END.
+
+PERSONS_START:
+
+PERSONS_COUNT:0
+PERSONS_COUNT_END.
+
+PERSONS_END.
+
+#END#F0003
+
+COLOR_CHANGE_START:255.255.255.255#   0,5#0,5   #COLOR_CHANGE_END.
+
+#START#F0004 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+SPEAKER_START:
+Ельцин Б.Н.
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.255.255.255 SPEAKER_COLOR_END:
+
+TEXT_START:
+~ Мы все примеряли эту дату на себя, прикидывали – сначала в детстве, потом повзрослев – сколько нам будет в 2000 году, а сколько нашей маме, а сколько нашим детям. Казалось когда-то: так далеко этот необыкновенный Новый год. Вот этот день и настал. ~
+TEXT_END.
+
+BG_START:
+Backgrounds/stress
+BG_END.
+
+BG_EFFECT_START: 
+Video (Effects)/TV 
+BG_EFFECT_END.
+
+BG_CHANGE_START:
+STANDART
+BG_CHANGE_END.
+
+STANDART_CHANGE_START: 2 #
+
+MUSIC_START:
+Assets/OST RD/DDT/Rain (DDT).mp3
+MUSIC__END.
+
+
+PERSONS_START:
+
+PERSONS_COUNT:0
+PERSONS_COUNT_END.
+
+PERSONS_END.
+
+RESULT_COUNT:1#
+RES:TIMES@+@1 RES_END.
+
+#END#F0004
+
+
+
+#START#Finall ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+END
+TYPE_END.
+
+NEXT_FILE_START:
+Textes/SecondTextEvent
+NEXT_FILE_END.
+
+#END#Finall
+
+
+!FULLEND!
+
+

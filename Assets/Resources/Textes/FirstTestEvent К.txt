@@ -1,0 +1,110 @@
+#START#F0001 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+SPEAKER_START:
+Слушатель
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.255.255 SPEAKER_COLOR_END:
+
+
+TEXT_START:
+~ По телевизору шел Ельцин. За это десятилетие он изрядно постарел (оно и понятно, столько пить!). Поговаривают, что на этой трансляции он скажет что-то очень важное для страны... ~
+TEXT_END.
+
+BG_START:
+Backgrounds/BG_TV
+BG_END.
+
+BG_EFFECT_START: 
+NONE
+BG_EFFECT_END.
+
+BG_CHANGE_START:
+COLOR
+BG_CHANGE_END.
+
+
+TIME_START:
+Декабрь 1999
+TIME__END.
+
+MUSIC_START:
+Assets/OST RD/DDT/Rain (DDT).mp3
+MUSIC__END.
+
+ANIMATIONS_START:
+NONE
+ANIMATIONS_END.
+
+PERSONS_START:
+
+PERSONS_COUNT:0
+PERSONS_COUNT_END.
+
+PERSONS_END.
+
+RESULT_COUNT:1#
+RES:TIMES@+@1 RES_END.
+
+
+#END#F0001
+
+#START#F0002 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+Этот слайд докажет, что можно написать его только добавив текст, а остальное используется из предыдущего)
+TEXT_END.
+
+#END#F0001
+
+#START#F0002 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+То есть я могу в текстовом документе достаточно долго так писать.
+TEXT_END.
+
+#END#F0002
+
+
+#START#F0002 ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+Просто по одному тексту) Тут кстати +1 к TIMES
+TEXT_END.
+
+RESULT_COUNT:1#
+RES:TIMES@+@1 RES_END.
+
+
+#END#F0002
+
+#START#Finall ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+END
+TYPE_END.
+
+NEXT_FILE_START:
+Textes/SecondTextEvent
+NEXT_FILE_END.
+
+#END#Finall
+!FULLEND!
+
+

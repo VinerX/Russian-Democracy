@@ -1,0 +1,70 @@
+#START# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+Я пойду!
+TEXT_END.
+
+SPEAKER_START:
+Александр
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+#END#
+
+#START#
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+~ По его серьёзному выражению было видно, что он нервничает, возможно и недовольный моим выбором он признаёт его. ~
+TEXT_END.
+
+SPEAKER_START:
+Александр
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+#END#
+
+#START# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+TXT
+TYPE_END.
+
+TEXT_START:
+~ Мне тоже тяжело, особенно оставлять их, но я обязательно вернусь. Обязательно.. ~
+TEXT_END.
+
+SPEAKER_START:
+Александр
+SPEAKER_END.
+
+SPEAKER_COLOR_START: 255.000.000.255 SPEAKER_COLOR_END:
+
+
+#END#
+
+
+
+#START#Finall ----------------------------------------------------------------------------------------------------------------------------------------------
+
+TYPE_START:
+END
+TYPE_END.
+
+NEXT_FILE_START:
+Textes\Alexander A\Alexander A 2
+NEXT_FILE_END.
+
+CLEAN_PERSONS
+
+#END#Finall
