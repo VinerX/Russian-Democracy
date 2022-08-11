@@ -5,29 +5,29 @@ using UnityEngine.UI;
 
 public class Init : MonoBehaviour
 {
-    [SerializeField] private SetAllStat SaS;
-    [SerializeField] private Scrollbar hp_s;
-    [SerializeField] private Scrollbar popularity_s;
-    [SerializeField] private Scrollbar stress_s;
-    [SerializeField] private Scrollbar drinking_s;
+    
 
+    public Scrollbar hp_s;
+    public Scrollbar popularity_s;
+    public Scrollbar stress_s;
+    public Scrollbar drinking_s;
+    
+    void SetChildrenActiveState(bool active) {
+    foreach(GameObject El in g.ScreensTag) {
+        El.SetActive(active);
+        //Debug.Log(El.name);
+    }
+    }
 
 
     void Start()
     {
-    g.hp = 1f;
-    g.popularity = 1f;
-    g.stress = 0.5f;
-    g.drinking = 0f;
-
-    g.hp_s=hp_s;
-    g.popularity_s=popularity_s;
-    g.stress_s=stress_s ;
-    g.drinking_s=drinking_s;
-
-
-
-    SaS.SetAllS();
+    
+    SetChildrenActiveState(false);
+    g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
+    
+    
+    g.SaS.SetAllS();
     }
 
   
