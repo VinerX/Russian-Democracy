@@ -19,6 +19,7 @@ public class Functions : MonoBehaviour
         g.stress[0]+=g.stress[1];
         g.drinking[0]+=g.drinking[1];
         g.popularity[0]+=g.popularity[1];
+        
     }
 
 
@@ -30,7 +31,31 @@ public class Functions : MonoBehaviour
     }
     }
 
+    public void ToDeath(string Type){
+        g.SaS.ScreensOff(false);
+        g.Screens.GetComponent<Transform>().Find("DefeatMenu").gameObject.SetActive(true);
+        switch (Type)
+        {
+            case "hp":
+                //GameObject.Find("DefeatBg").GetComponent<Image>().sprite("Die");
+            break;
 
+            default: 
+            break;
+        }   
+
+    }
+
+
+    public void CheckDef(){
+        if (g.hp[0] <= 0f){
+            ToDeath("hp");
+        }
+            
+
+
+
+    }
 
     
 

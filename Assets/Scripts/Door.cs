@@ -13,5 +13,6 @@ public class Door : MonoBehaviour
     g.drinking[0]+=g.drinking[1];
     g.SaS.SetChange();
     g.SaS.SetGrafics();
+    g.SaS.CheckDef();
     }
 }
