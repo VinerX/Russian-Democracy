@@ -16,10 +16,10 @@ public static class g
     //Статы
     // Если массив 1 - значение сейчас, 2 изменение за ход
     //Статы персонажа
-    public static float[] hp = {25,+1};
-    public static float[] popularity = {25,0};
-    public static float[] stress = {25,-1};
-    public static float[] drinking = {25,-1};
+    public static float[] hp = {25f,+1f};
+    public static float[] popularity = {25f,0f};
+    public static float[] stress = {25f,-1f};
+    public static float[] drinking = {25f,-1f};
     //Конец стат персонажа
 
     // Объекты интерфейса
@@ -29,7 +29,14 @@ public static class g
     public static Scrollbar drinking_s = GameObject.Find("ScrollbarDrinking2").GetComponent<Scrollbar>();
     
     public static GameObject Screens = GameObject.Find("Screens");
-    
+
+    //Поражение
+    public static GameObject DefeatMenu = GameObject.Find("DefeatMenu");
+    public static GameObject DefeatBg = GameObject.Find("DefeatBg");
+    public static GameObject DefeatTextTitle = GameObject.Find("DefeatTextTitle");
+    public static GameObject DefeatText = GameObject.Find("DefeatText");
+    //Поражение
+
     public static Transform[] ScreensChild = Screens.GetComponentsInChildren<Transform>(true);
     public static GameObject[] ScreensTag = GameObject.FindGameObjectsWithTag("GameScreen");
     //new List<GameObject>();
