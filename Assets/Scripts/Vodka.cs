@@ -8,12 +8,8 @@ public class Vodka : MonoBehaviour
     
 
     public void Click(){
-        g.drinking[0] = g.drinking[0] + 1;
-        g.stress[0] = g.stress[0] - 1;
-        //g.drinking_s.size = (float)g.drinking[0]/100;
-        //g.stress_s.size = (float)g.stress[0]/100;
-        //Debug.Log("+Питье");
-        g.SaS.SetAllS();
-        g.SaS.SetG();
+        g.drinking[0] = g.drinking[0] + 1f;
+        g.stress[0] = g.stress[0] - 1f;
+        g.SaS.SetGrafics();
     }
 }

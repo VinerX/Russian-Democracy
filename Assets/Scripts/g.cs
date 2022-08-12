@@ -6,15 +6,20 @@ using UnityEngine.UI;
 public static class g
 {
 
+    //Подключить другие скрипты для функций
+    public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
+
+
+
+
+
     //Статы
     // Если массив 1 - значение сейчас, 2 изменение за ход
-
-
     //Статы персонажа
-    public static int[] hp = {25,-1};
-    public static int[] popularity = {25,-1};
-    public static int[] stress = {25,-1};
-    public static int[] drinking = {25,+1};
+    public static float[] hp = {25,+1};
+    public static float[] popularity = {25,0};
+    public static float[] stress = {25,-1};
+    public static float[] drinking = {25,-1};
     //Конец стат персонажа
 
     // Объекты интерфейса
@@ -24,7 +29,7 @@ public static class g
     public static Scrollbar drinking_s = GameObject.Find("ScrollbarDrinking2").GetComponent<Scrollbar>();
     
     public static GameObject Screens = GameObject.Find("Screens");
-    public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
+    
     public static Transform[] ScreensChild = Screens.GetComponentsInChildren<Transform>(true);
     public static GameObject[] ScreensTag = GameObject.FindGameObjectsWithTag("GameScreen");
     //new List<GameObject>();
