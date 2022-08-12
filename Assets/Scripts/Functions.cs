@@ -16,6 +16,8 @@ public class Functions : MonoBehaviour
 
     public void SetChange(){
         g.hp[0]+=g.hp[1];
+        if (g.hp[0]>100f) g.hp[0]=100f;
+        if (g.hp[0]<25f) g.QC.AddQuest("DangerHp");
         g.stress[0]+=g.stress[1];
         g.drinking[0]+=g.drinking[1];
         g.popularity[0]+=g.popularity[1];

@@ -9,8 +9,14 @@ public static class g
     //Подключить другие скрипты для функций
     public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
     public static Dangers Dan = GameObject.Find("DangersO").GetComponent<Dangers>();
+    public static QuestControl QC = GameObject.Find("QuestControlO").GetComponent<QuestControl>();
 
 
+
+    //Квестконтрол
+    public static List<string> QuestGroup = new List<string>();
+
+    //Квестконтрол
 
 
     //Статы
@@ -40,6 +46,7 @@ public static class g
 
 
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
+    //public static GameObject[] = g.AnswerPanel.GetComponent<RectTransform>().GetComponentsInChildren
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");
     public static GameObject TextTip = GameObject.Find("TextTip");

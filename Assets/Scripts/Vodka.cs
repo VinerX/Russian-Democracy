@@ -13,6 +13,6 @@ public class Vodka : MonoBehaviour
         g.popularity[0] -= 1f;
         g.hp[0] -= 1f;
         g.SaS.SetGrafics();
-        Debug.Log( g.hp[0].ToString());
+        //Debug.Log( g.hp[0].ToString());
     }
 }
