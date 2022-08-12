@@ -59,8 +59,8 @@ public class Functions : MonoBehaviour
                 g.DefeatBg.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Die");
                 g.DefeatTextTitle.GetComponent<Text>().text = "Сердечный приступ";
                 g.DefeatText.GetComponent<Text>().text ="Политика - дело грязное, и очень нервное." +
-                "На вашу долю выпало слишком много трудностей - нервная система не справилась." +
-                "Видать, такова участь президента демократической страны"
+                "На вашу долю выпало слишком много трудностей - нервная система не справилась. Случился приступ." +
+                "Похоже, такова участь президента демократической страны. Пора уходить в отставку"
 
                 ; 
             break;

@@ -8,7 +8,7 @@ public static class g
 
     //Подключить другие скрипты для функций
     public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
-
+    public static Dangers Dan = GameObject.Find("DangersO").GetComponent<Dangers>();
 
 
 
@@ -30,12 +30,32 @@ public static class g
     
     public static GameObject Screens = GameObject.Find("Screens");
 
-    //Поражение
+    // Меню квеста
+    public static GameObject QuestMenu = GameObject.Find("QuestMenu");
+
+    public static GameObject QuestPanel = GameObject.Find("QuestPanel");
+    public static GameObject QuestTitle = GameObject.Find("QuestTitle");
+    public static GameObject QuestText = GameObject.Find("QuestText");
+    public static GameObject QuestImage = GameObject.Find("QuestImage");
+
+
+    public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
+    public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
+    public static GameObject TextRequires = GameObject.Find("TextRequires");
+    public static GameObject TextTip = GameObject.Find("TextTip");
+
+
+     // Меню квеста
+    
+    
+    
+    
+    // Меню поражения
     public static GameObject DefeatMenu = GameObject.Find("DefeatMenu");
     public static GameObject DefeatBg = GameObject.Find("DefeatBg");
     public static GameObject DefeatTextTitle = GameObject.Find("DefeatTextTitle");
     public static GameObject DefeatText = GameObject.Find("DefeatText");
-    //Поражение
+    // Меню поражения
 
     public static Transform[] ScreensChild = Screens.GetComponentsInChildren<Transform>(true);
     public static GameObject[] ScreensTag = GameObject.FindGameObjectsWithTag("GameScreen");
