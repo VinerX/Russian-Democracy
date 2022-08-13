@@ -28,7 +28,7 @@ public class Events : MonoBehaviour
         DisionTip[b]="Ваша политическая власть ослабнет, но здоровье вы поправите";
         DisionReq[b]="Соблюдать постельный режим. (Требований нет)";
         DisionLead[b]="HPHealing"; //к ивенту лег в больницу
-
+ 
 
 
         //Собственно установка
@@ -39,14 +39,15 @@ public class Events : MonoBehaviour
 
         
         
+        //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
             if(i<=AnswerCount) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
                 g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
@@ -104,13 +105,14 @@ public class Events : MonoBehaviour
 
         
         
+        //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
             if(i<=AnswerCount) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
+                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
