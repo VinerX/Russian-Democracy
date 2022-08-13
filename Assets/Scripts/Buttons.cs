@@ -178,7 +178,23 @@ public class Buttons : MonoBehaviour
     }
 
     public void NextQuest(){
-
+         
+        int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
+        Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
+        if (QuestId == g.QuestGroup.Count-1) { //Если край левый 
+            Debug.Log("К другому концу");
+            QuestId = 0;
+            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.QuestNow= g.QuestGroup[QuestId];
+            
+        }
+        else {
+            Debug.Log("Правее");
+            QuestId +=1; //Квест левее
+            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.QuestNow= g.QuestGroup[QuestId];
+        }
+        OnTogglesInteract();
     }
 
     public void Finish(){
