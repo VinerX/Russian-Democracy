@@ -27,14 +27,15 @@ public class Buttons : MonoBehaviour
         if (g.QuestGroup.Count==0){
             g.QuestGroup.Add("FreeDay");
             g.QuestToSolve+=1;
-            g.Dan.FreeDay();
+            g.Event.FreeDay();
         }
         else {
             Debug.Log("Видно, что есть квесты");
-            g.Dan.BroadcastMessage(g.QuestGroup[0]);
+            g.Event.BroadcastMessage(g.QuestGroup[0]);
 
 
         }
+        OnTogglesInteract();
         g.AnswerPanel.SetActive(false);
         g.QuestPanel.SetActive(true);
 
@@ -62,7 +63,10 @@ public class Buttons : MonoBehaviour
 
     public void Toggle1(){
         int AnserId=1;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
+        g.Results+=1; //Временно
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -72,7 +76,9 @@ public class Buttons : MonoBehaviour
     }
     public void Toggle2(){
         int AnserId=2;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -83,7 +89,9 @@ public class Buttons : MonoBehaviour
     }
     public void Toggle3(){
         int AnserId=3;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -95,7 +103,9 @@ public class Buttons : MonoBehaviour
 
     public void Toggle4(){
         int AnserId=4;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -107,7 +117,9 @@ public class Buttons : MonoBehaviour
 
     public void Toggle5(){
         int AnserId=5;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -119,7 +131,9 @@ public class Buttons : MonoBehaviour
 
     public void Toggle6(){
         int AnserId=6;
-        
+        string Res;
+        g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -158,40 +172,40 @@ public class Buttons : MonoBehaviour
 
     //https://metanit.com/sharp/tutorial/4.5.php
     public void LastQuest(){
-        
+        g.ResultDict.Clear();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == 0) { //Если край левый 
             Debug.Log("К другому концу");
             QuestId = g.QuestGroup.Count-1;
-            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
             
         }
         else {
             Debug.Log("Левее");
             QuestId -=1; //Квест левее
-            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
         }
         OnTogglesInteract();
     }
 
     public void NextQuest(){
-         
+        g.ResultDict.Clear(); 
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == g.QuestGroup.Count-1) { //Если край левый 
             Debug.Log("К другому концу");
             QuestId = 0;
-            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
             
         }
         else {
             Debug.Log("Правее");
             QuestId +=1; //Квест левее
-            g.Dan.BroadcastMessage( g.QuestGroup[QuestId]);
+            g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
         }
         OnTogglesInteract();
@@ -200,11 +214,42 @@ public class Buttons : MonoBehaviour
     public void Finish(){
         if (g.QuestToSolve==0){
             g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(false);
-            g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
+            
             g.QuestGroup.Clear();
             g.SolvedQuests.Clear();
-            g.SaS.SetChange();
-            g.SaS.SetGrafics();
+            g.ResultDict.Clear();
+
+            g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(true);
+            Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
+            g.Result.BroadcastMessage( g.ResultGroup[0]);
+            g.ResultGroup.Remove(g.ResultNow);
+            g.Results-=1;
+            
         }
     }
+
+
+    public void NextResult(){
+        Debug.Log("Есть нажатие");
+        if (g.Results>1) {
+            Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
+            g.Result.BroadcastMessage( g.ResultGroup[0]);
+            g.ResultGroup.Remove(g.ResultNow);
+            g.Results-=1;
+        }
+        else {
+            g.SaS.SetChange();
+            g.SaS.SetGrafics();
+            g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(false);
+            g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
+            g.ResultGroup.Clear();
+            g.Results=0;
+        }
+    }
+
+
+
+
+
 }
+

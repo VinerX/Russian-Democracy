@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Dangers : MonoBehaviour
+public class Events : MonoBehaviour
 {
+
+
+
+    //Блок предупредительных ивентов
+    
     public void DangerHp(){
         g.QuestNow="DangerHp";
         string QuestTitle="Угроза: Слабое здоровье";
@@ -30,7 +35,7 @@ public class Dangers : MonoBehaviour
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-
+        
 
         
         
@@ -40,11 +45,9 @@ public class Dangers : MonoBehaviour
             if(i<=AnswerCount) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
-                //Ans.gameObject.SetActive(true);
+                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
-
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                //GameObject.Find("Answer"+i.ToString()).GetComponent<RectTransform>().Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
                 g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
                 g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
                 }
@@ -83,13 +86,13 @@ public class Dangers : MonoBehaviour
         DisionText[b]="Ладно, недельку трезвым побудем...";
         DisionTip[b]="-Алкоголизм, + стресс";
         DisionReq[b]="Держитесь (Требований нет)";
-        DisionLead[b]="HPHealing"; //к ивенту лег в больницу
+        DisionLead[b]="DrinkingStop"; //к ивенту лег в больницу
 
         b+=1;
         DisionText[b]="Еще рюмочку";
         DisionTip[b]="+Алкоголизм, - стресс";
         DisionReq[b]="Зачем? (Требований нет)";
-        DisionLead[b]="HPHealing"; //к ивенту лег в больницу
+        DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
 
 
 
@@ -107,11 +110,9 @@ public class Dangers : MonoBehaviour
             if(i<=AnswerCount) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
-                //Ans.gameObject.SetActive(true);
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
-
+                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                //GameObject.Find("Answer"+i.ToString()).GetComponent<RectTransform>().Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
                 g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
                 g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
                 }
@@ -133,11 +134,14 @@ public class Dangers : MonoBehaviour
 
     }
 
+
+    //Общие
+    
     public void FreeDay(){
         g.QuestNow="FreeDay";
         string QuestTitle="Свободный день";
         string QuestText="Никаких проблем сегодня решать не надо, можно потратить время на себя";        
-        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
+        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest   ");
         //Общее для всех вариантов
         
         byte AnswerCount = 2;
@@ -150,34 +154,30 @@ public class Dangers : MonoBehaviour
         DisionText[b]="Сыграть в теннис";
         DisionTip[b]="Полезно для здоровья";
         DisionReq[b]="(Требований нет)";
-        DisionLead[b]="HPHealing"; //к ивенту лег в больницу
+        DisionLead[b]="FreeTennis"; //к ивенту лег в больницу
 
         b+=1;
         DisionText[b]="Выпить";
         DisionTip[b]="Снимает стресс";
         DisionReq[b]="Не переусердствуйте (Требований нет)";
-        DisionLead[b]="HPHealing"; //к ивенту лег в больницу
+        DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
 
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-
-
         
-        
+        //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
             if(i<=AnswerCount) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
-                //Ans.gameObject.SetActive(true);
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
-
+                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                //GameObject.Find("Answer"+i.ToString()).GetComponent<RectTransform>().Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[0];
                 g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
                 g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
                 }

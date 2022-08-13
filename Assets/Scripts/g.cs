@@ -8,15 +8,18 @@ public static class g
 
     //Подключить другие скрипты для функций
     public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
-    public static Dangers Dan = GameObject.Find("DangersO").GetComponent<Dangers>();
+    public static Events Event = GameObject.Find("EventsO").GetComponent<Events>();
+    
     public static QuestControl QC = GameObject.Find("QuestControlO").GetComponent<QuestControl>();
+    
 
 
 
     //Квестконтрол
     public static List<string> QuestGroup = new List<string>();
-    public static string QuestNow = "FreeDay";
-    public static int QuestToSolve = 0;
+    
+    
+    
     public static List<string> SolvedQuests = new List<string>();
     //Квестконтрол
 
@@ -40,7 +43,8 @@ public static class g
 
     // Меню квеста
     public static GameObject QuestMenu = GameObject.Find("QuestMenu");
-
+    public static string QuestNow = "FreeDay";
+    public static int QuestToSolve = 0;
     public static GameObject QuestPanel = GameObject.Find("QuestPanel");
     public static GameObject QuestTitle = GameObject.Find("QuestTitle");
     public static GameObject QuestText = GameObject.Find("QuestText");
@@ -52,6 +56,21 @@ public static class g
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");
     public static GameObject TextTip = GameObject.Find("TextTip");
+
+
+    //Меню результата
+    public static Dictionary<string,string> ResultDict = new Dictionary<string,string>();
+    public static Results Result = GameObject.Find("ResultsO").GetComponent<Results>();
+    public static string ResultNow;
+    public static int Results = 0;
+    public static List<string> ResultGroup = new List<string>();
+    public static GameObject ResultPanel = GameObject.Find("ResultPanel");
+    public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
+    public static GameObject ResultText = GameObject.Find("ResultText");
+    public static GameObject ResultImage = GameObject.Find("ResultImage");
+    
+
+
 
 
      // Меню квеста

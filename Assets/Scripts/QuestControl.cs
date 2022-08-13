@@ -17,6 +17,14 @@ public class QuestControl : MonoBehaviour
             //g.Dan.BroadcastMessage(Quest);
         
     }
+
+    public void AddResult(string Result){
+        if (!g.ResultGroup.Contains(Result))
+            g.ResultGroup.Add(Result);
+            g.Results+=1;
+            //g.Dan.BroadcastMessage(Quest);
+        
+    }
 //g.Dan.DangerHp();
 
 
