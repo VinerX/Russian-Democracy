@@ -20,6 +20,7 @@ public class Functions : MonoBehaviour
         if (g.hp[0]<25f) g.QC.AddQuest("DangerHp");
         g.stress[0]+=g.stress[1];
         g.drinking[0]+=g.drinking[1];
+        if (g.drinking[0]>55f) g.QC.AddQuest("DangerDrinking");
         g.popularity[0]+=g.popularity[1];
         
     }

@@ -15,7 +15,9 @@ public static class g
 
     //Квестконтрол
     public static List<string> QuestGroup = new List<string>();
-
+    public static string QuestNow = "FreeDay";
+    public static int QuestToSolve = 0;
+    public static List<string> SolvedQuests = new List<string>();
     //Квестконтрол
 
 

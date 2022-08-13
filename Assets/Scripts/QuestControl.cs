@@ -13,7 +13,8 @@ public class QuestControl : MonoBehaviour
     public void AddQuest(string Quest){
         if (!g.QuestGroup.Contains(Quest))
             g.QuestGroup.Add(Quest);
-            g.Dan.BroadcastMessage(Quest);
+            g.QuestToSolve+=1;
+            //g.Dan.BroadcastMessage(Quest);
         
     }
 //g.Dan.DangerHp();
