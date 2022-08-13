@@ -62,7 +62,7 @@ public class Buttons : MonoBehaviour
 
     public void Toggle1(){
         int AnserId=1;
-        GameObject.Find("Answer"+AnserId.ToString()).gameObject.GetComponent<Toggle>();
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -72,7 +72,7 @@ public class Buttons : MonoBehaviour
     }
     public void Toggle2(){
         int AnserId=2;
-        GameObject.Find("Answer"+AnserId.ToString());
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -83,7 +83,7 @@ public class Buttons : MonoBehaviour
     }
     public void Toggle3(){
         int AnserId=3;
-        GameObject.Find("Answer"+AnserId.ToString());
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -95,7 +95,7 @@ public class Buttons : MonoBehaviour
 
     public void Toggle4(){
         int AnserId=4;
-        GameObject.Find("Answer"+AnserId.ToString());
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -107,7 +107,7 @@ public class Buttons : MonoBehaviour
 
     public void Toggle5(){
         int AnserId=5;
-        GameObject.Find("Answer"+AnserId.ToString());
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
@@ -119,7 +119,7 @@ public class Buttons : MonoBehaviour
 
     public void Toggle6(){
         int AnserId=6;
-        GameObject.Find("Answer"+AnserId.ToString());
+        
         OffTogles(AnserId);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
