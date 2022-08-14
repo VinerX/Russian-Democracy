@@ -82,6 +82,7 @@ public static class g
     public static string ResultNow;
     public static int Results = 0;
     public static List<string> ResultGroup = new List<string>();
+    public static string[] ResultFor1 = new string[50];
     public static GameObject ResultPanel = GameObject.Find("ResultPanel");
     public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
     public static GameObject ResultText = GameObject.Find("ResultText");

@@ -13,7 +13,9 @@ public class Init : MonoBehaviour
     g.AnswerPanel.SetActive(false);
     g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
     g.SaS.SetGrafics();
-
+    for(byte i=0;i<50;i++){
+        g.ResultFor1[i]="";     
+            }
     
     }
 
