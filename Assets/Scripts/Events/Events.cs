@@ -19,6 +19,7 @@ public class Events : MonoBehaviour
         string[] DisionText = new string[6];
         string[] DisionTip = new string[6];
         string[] DisionReq = new string[6];
+        bool[] DisionOn = {true,true,true,true,true,true};
         string[] DisionLead = new string[6];
 
 
@@ -40,7 +41,7 @@ public class Events : MonoBehaviour
         DisionTip[b]="";
         DisionReq[b]="";
         DisionLead[b]="None"; 
-        
+
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
@@ -51,7 +52,7 @@ public class Events : MonoBehaviour
         
         b+=1;
         //Проход по тоглам
-        for(byte i=1;i<=6;i++)
+       for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
@@ -62,8 +63,26 @@ public class Events : MonoBehaviour
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
+                g.QuestOn[i-1]=DisionOn[i-1];
+                if (DisionOn[i-1]==false) {
+                    
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+
+
+                    }
+                else {
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
+
+
                 }
-                
+
+                    }
+
+
             else {
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
             }
@@ -71,6 +90,10 @@ public class Events : MonoBehaviour
 
 
 
+               
+        
+        
+        
         }
 
 
@@ -90,6 +113,7 @@ public class Events : MonoBehaviour
         string[] DisionText = new string[6];
         string[] DisionTip = new string[6];
         string[] DisionReq = new string[6];
+        bool[] DisionOn = {true,true,true,true,true,true};
         string[] DisionLead = new string[6];
 
 
@@ -132,9 +156,26 @@ public class Events : MonoBehaviour
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
+                g.QuestOn[i-1]=DisionOn[i-1];
+                if (DisionOn[i-1]==false) {
+                    
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+
+
+                    }
+                else {
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
+
 
                 }
-                
+
+                    }
+
+
             else {
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
             }
@@ -142,6 +183,10 @@ public class Events : MonoBehaviour
 
 
 
+               
+        
+        
+        
         }
 
 
@@ -151,6 +196,7 @@ public class Events : MonoBehaviour
 
 
     }
+
     public void DangerPopularity(){
         g.QuestNow="DangerPopularity";
         string QuestTitle="Угроза: непопулярность";
@@ -160,6 +206,7 @@ public class Events : MonoBehaviour
         string[] DisionText = new string[6];
         string[] DisionTip = new string[6];
         string[] DisionReq = new string[6];
+        bool[] DisionOn = {true,true,true,true,true,true};
         string[] DisionLead = new string[6];
 
 
@@ -198,9 +245,26 @@ public class Events : MonoBehaviour
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
+                g.QuestOn[i-1]=DisionOn[i-1];
+                if (DisionOn[i-1]==false) {
+                    
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+
+
+                    }
+                else {
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
+
 
                 }
-                
+
+                    }
+
+
             else {
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
             }
@@ -208,6 +272,10 @@ public class Events : MonoBehaviour
 
 
 
+               
+        
+        
+        
         }
 
 
@@ -232,6 +300,7 @@ public class Events : MonoBehaviour
         string[] DisionText = new string[6];
         string[] DisionTip = new string[6];
         string[] DisionReq = new string[6];
+        bool[] DisionOn = {true,true,true,true,true,true};
         string[] DisionLead = new string[6];
 
         DisionText[b]="Сыграть в теннис";
@@ -244,7 +313,7 @@ public class Events : MonoBehaviour
         DisionTip[b]="Снимает стресс";
         DisionReq[b]="Не переусердствуйте (Требований нет)";
         DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
-
+        if (5>3) DisionOn[b]=false;
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
@@ -253,6 +322,7 @@ public class Events : MonoBehaviour
         
         b+=1;
         //Проход по тоглам
+        
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
@@ -264,8 +334,26 @@ public class Events : MonoBehaviour
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
+                g.QuestOn[i-1]=DisionOn[i-1];
+                if (DisionOn[i-1]==false) {
+                    
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+
+
+                    }
+                else {
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
+
+
                 }
-                
+
+                    }
+
+
             else {
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
             }
@@ -273,15 +361,19 @@ public class Events : MonoBehaviour
 
 
 
+               
+        
+        
+        
         }
 
 
 
-
+        
         
 
 
     }
 
-
+    
 }

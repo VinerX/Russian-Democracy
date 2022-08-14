@@ -19,7 +19,7 @@ public class QuestControl : MonoBehaviour
     }
 
     public void AddResult(string Result){
-        if (!g.ResultGroup.Contains(Result))
+        if (!g.ResultGroup.ContainsValue(Result))
             g.ResultGroup.Add(Result);
             g.Results+=1;
             //g.Dan.BroadcastMessage(Quest);

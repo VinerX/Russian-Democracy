@@ -26,6 +26,9 @@ public static class g
 
     //Статы
     // Если массив 1 - значение сейчас, 2 изменение за ход
+    
+    
+    
     //Статы персонажа
     public static float[] polits = {50f,+1f};
     public static float[] hp = {25f,+1f};
@@ -63,7 +66,7 @@ public static class g
     public static GameObject QuestImage = GameObject.Find("QuestImage");
     public static string[] QuestReq = new string[6];
     public static string[] QuestTip = new string[6];
-
+    public static bool[] QuestOn = {true,true,true,true,true,true};
 
     public static bool QuestMenuNow = true;
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
@@ -78,7 +81,7 @@ public static class g
     public static Results Result = GameObject.Find("ResultsO").GetComponent<Results>();
     public static string ResultNow;
     public static int Results = 0;
-    public static List<string> ResultGroup = new List<string>();
+    public static Dictionary<string,string> ResultGroup = new Dictionary<string,string>();
     public static GameObject ResultPanel = GameObject.Find("ResultPanel");
     public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
     public static GameObject ResultText = GameObject.Find("ResultText");

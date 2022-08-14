@@ -38,6 +38,16 @@ public class Buttons : MonoBehaviour
     }
     //Доки в главном меню
     public void DocsMain(){
+
+
+
+        for (byte i=1; i<=6;i++){
+            Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
+            AnsT.interactable=true;
+            //AnsT.isOn=false;
+        }
+        OnTogglesInteract();
+
         if (g.QuestGroup.Count==0){
             g.QuestGroup.Add("FreeDay");
             g.QuestToSolve+=1;
@@ -50,15 +60,11 @@ public class Buttons : MonoBehaviour
 
         }
         Debug.Log("Квестов на момент входа " + g.QuestToSolve);
-        OnTogglesInteract();
+        
         g.AnswerPanel.SetActive(false);
         g.QuestPanel.SetActive(true);
 
-        for (byte i=1; i<=6;i++){
-            Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
-            AnsT.interactable=true;
-            //AnsT.isOn=false;
-        }
+        
         
         g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(true);
         g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(false);
@@ -80,16 +86,14 @@ public class Buttons : MonoBehaviour
         int AnserId=1;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -98,16 +102,13 @@ public class Buttons : MonoBehaviour
         int AnserId=2;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -117,16 +118,13 @@ public class Buttons : MonoBehaviour
         int AnserId=3;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -137,16 +135,13 @@ public class Buttons : MonoBehaviour
         int AnserId=4;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -157,16 +152,13 @@ public class Buttons : MonoBehaviour
         int AnserId=5;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -177,16 +169,13 @@ public class Buttons : MonoBehaviour
         int AnserId=6;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add(Res);
+        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
-        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
-        g.SolvedQuests.Add(g.QuestNow);
-        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
+        g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
-        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
         g.Results+=1;
         
         }
@@ -197,7 +186,7 @@ public class Buttons : MonoBehaviour
         
         for (byte i=1; i<=6;i++){
             Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
-            if(id==i){
+            if(id==i || g.QuestOn[i-1]==false){
                 
                 AnsT.interactable=false;
             }
