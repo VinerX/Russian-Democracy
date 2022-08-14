@@ -19,13 +19,21 @@ public class Functions : MonoBehaviour
     public void SetChange(){
         g.hp[0]+=g.hp[1];
         if (g.hp[0]>100f) g.hp[0]=100f;
-        if (g.hp[0]<25f) g.QC.AddQuest("DangerHp");
+        else if (g.hp[0]<25f) g.QC.AddQuest("DangerHp");
+
         g.stress[0]+=g.stress[1];
+        if (g.stress[0]<0) g.stress[0]=0f;
+        else if (g.stress[0]>75f) g.QC.AddQuest("DangerStress");
+
         g.drinking[0]+=g.drinking[1];
         if (g.drinking[0]>55f) g.QC.AddQuest("DangerDrinking");
-        g.popularity[0]+=g.popularity[1];
-        g.polits[0]+=g.polits[1];
+        else if (g.drinking[0]<0f) g.drinking[0]=0;
+
         
+        g.popularity[0]+=g.popularity[1];
+        if (g.popularity[0]<15f) g.QC.AddQuest("DangerPopularity");
+        g.polits[0]+=g.polits[1];
+        if (g.polits[0]<0f) g.polits[0]=0;
     }
 
 

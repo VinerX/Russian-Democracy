@@ -33,7 +33,7 @@ public static class g
     public static float[] polits = {50f,+1f};
     public static float[] hp = {25f,+1f};
     public static float[] popularity = {25f,0f};
-    public static float[] stress = {25f,-1f};
+    public static float[] stress = {25f,11f};
     public static float[] drinking = {25f,-1f};
     //Конец стат персонажа
 

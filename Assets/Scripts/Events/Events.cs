@@ -286,6 +286,95 @@ public class Events : MonoBehaviour
 
     }
 
+    public void DangerStress(){
+        g.QuestNow="DangerStress";
+        string QuestTitle="Угроза: постоянный стресс";
+        string QuestText="Вам очень тяжело. Кажется, даже сердце начинает побаливать. Может что-то предпринять.";
+        Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Stress");
+        
+        string[] DisionText = new string[6];
+        string[] DisionTip = new string[6];
+        string[] DisionReq = new string[6];
+        bool[] DisionOn = {true,true,true,true,true,true};
+        string[] DisionLead = new string[6];
+
+
+
+        byte b =0;
+        DisionText[b]="Рюмочку!";
+        DisionTip[b]="-Стресс, -Здоровье, +Алкоголизм";
+        DisionReq[b]="(Требований нет)";
+        DisionLead[b]="DrinkingCont"; 
+
+        b+=1;
+        DisionText[b]="Ничего не делать";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="None"; 
+
+
+
+        //Собственно установка
+        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.QuestText.GetComponent<Text>().text=QuestText;
+        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
+
+
+        
+        b+=1;
+        //Проход по тоглам
+        for(byte i=1;i<=6;i++)
+        {
+            //Debug.Log("Answer"+i.ToString());
+            if(i<=b) {
+                Transform Ans;
+                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
+                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
+                g.QuestTip[i-1]=DisionTip[i-1];
+                g.QuestReq[i-1]=DisionReq[i-1];
+                g.QuestOn[i-1]=DisionOn[i-1];
+                if (DisionOn[i-1]==false) {
+                    
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+
+
+                    }
+                else {
+                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
+                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
+                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
+
+
+                }
+
+                    }
+
+
+            else {
+                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+            }
+            
+
+
+
+               
+        
+        
+        
+        }
+
+
+
+
+        
+
+
+    }
+
     //Общие
     
     public void FreeDay(){
