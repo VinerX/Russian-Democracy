@@ -43,6 +43,14 @@ public class Results : MonoBehaviour
         g.ResultText.GetComponent<Text>().text = "Пили вы знатно, пили вы много...";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Drinking");
     }
+    public void PopularityTV(){
+        //Debug.Log("Результат");
+        g.ResultNow = "PopularityTV";
+        g.popularity[0]+=3f;
+        g.ResultTitle.GetComponent<Text>().text= "Показ по тв";
+        g.ResultText.GetComponent<Text>().text = "Так и быть, на кого-то это подействовало";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Speach");
+    }
 
 
     public void FreeTennis(){
@@ -54,20 +62,15 @@ public class Results : MonoBehaviour
         
         g.ResultTitle.GetComponent<Text>().text= "Хорошая игра в теннис";
         g.ResultText.GetComponent<Text>().text = "Увлекательно, а главное - полезно для здоровья";
-        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Drinking");
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Tennis");
     }
 
     
 
-    // public void NoneRes(){
-    //     //Debug.Log("Результат");
-    //     g.ResultNow = "DrinkingCont";
-    //     g.drinking[0]+=5f;
-    //     g.hp[0]-=2f;
-    //     g.stress[0]-=10f;
-    //     g.popularity[0]-=2f;
-    //     g.ResultTitle.GetComponent<Text>().text= "Веселая неделя";
-    //     g.ResultText.GetComponent<Text>().text = "Пили вы знатно, пили вы много...";
-    //     g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Drinking");
-    // }
+    public void NoneRes(){
+        g.ResultNow = "None";
+        g.ResultTitle.GetComponent<Text>().text= "Ничего не произошло";
+        g.ResultText.GetComponent<Text>().text = "Хоть вы и президент, но такое все-равно случается. Неделя прошла вообще без проишествий. Но скучно.";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/FunnyYeltsin");
+    }
 }

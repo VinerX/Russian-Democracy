@@ -15,11 +15,11 @@ public class Events : MonoBehaviour
         string QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
         " - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
-        byte AnswerCount = 2;
-        string[] DisionText = new string[AnswerCount];
-        string[] DisionTip = new string[AnswerCount];
-        string[] DisionReq = new string[AnswerCount];
-        string[] DisionLead = new string[AnswerCount];
+        
+        string[] DisionText = new string[6];
+        string[] DisionTip = new string[6];
+        string[] DisionReq = new string[6];
+        string[] DisionLead = new string[6];
 
 
 
@@ -35,7 +35,12 @@ public class Events : MonoBehaviour
         DisionReq[b]="Запивать водой (Требований нет)";
         DisionLead[b]="HPCure"; //к ивенту лег в больницу
 
-
+        b+=1;
+        DisionText[b]="Ничего не делать";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="None"; 
+        
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
@@ -44,18 +49,19 @@ public class Events : MonoBehaviour
 
         
         
+        b+=1;
         //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
-            if(i<=AnswerCount) {
+            if(i<=b) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
-                g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
+                g.QuestTip[i-1]=DisionTip[i-1];
+                g.QuestReq[i-1]=DisionReq[i-1];
                 }
                 
             else {
@@ -80,11 +86,11 @@ public class Events : MonoBehaviour
         string QuestText="Остановитесь. Хватит пить водку. Вы так долго не протянете";
         //" - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Drinking");
-        byte AnswerCount = 2;
-        string[] DisionText = new string[AnswerCount];
-        string[] DisionTip = new string[AnswerCount];
-        string[] DisionReq = new string[AnswerCount];
-        string[] DisionLead = new string[AnswerCount];
+        
+        string[] DisionText = new string[6];
+        string[] DisionTip = new string[6];
+        string[] DisionReq = new string[6];
+        string[] DisionLead = new string[6];
 
 
 
@@ -100,6 +106,76 @@ public class Events : MonoBehaviour
         DisionReq[b]="Зачем? (Требований нет)";
         DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
 
+        b+=1;
+        DisionText[b]="Ничего не делать";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="None"; 
+
+        //Собственно установка
+        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.QuestText.GetComponent<Text>().text=QuestText;
+        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
+
+
+        
+        b+=1;
+        //Проход по тоглам
+        for(byte i=1;i<=6;i++)
+        {
+            //Debug.Log("Answer"+i.ToString());
+            if(i<=b) {
+                Transform Ans;
+                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
+                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
+                g.QuestTip[i-1]=DisionTip[i-1];
+                g.QuestReq[i-1]=DisionReq[i-1];
+
+                }
+                
+            else {
+                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+            }
+            
+
+
+
+        }
+
+
+
+
+        
+
+
+    }
+    public void DangerPopularity(){
+        g.QuestNow="DangerPopularity";
+        string QuestTitle="Угроза: непопулярность";
+        string QuestText="Прогнозы неутешительные. Рейтинг идет к нулю, надо что-то менять";
+        Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Karik");
+        
+        string[] DisionText = new string[6];
+        string[] DisionTip = new string[6];
+        string[] DisionReq = new string[6];
+        string[] DisionLead = new string[6];
+
+
+
+        byte b =0;
+        DisionText[b]="Заплатим телевидению ";
+        DisionTip[b]="-бюджет администрации президента, +популярность";
+        DisionReq[b]="(Требований нет)";
+        DisionLead[b]="PopularityTV"; 
+
+        b+=1;
+        DisionText[b]="Ничего не делать";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="None"; 
+
 
 
         //Собственно установка
@@ -109,19 +185,20 @@ public class Events : MonoBehaviour
 
 
         
-        
+        b+=1;
         //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
-            if(i<=AnswerCount) {
+            if(i<=b) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
-                g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
+                g.QuestTip[i-1]=DisionTip[i-1];
+                g.QuestReq[i-1]=DisionReq[i-1];
+
                 }
                 
             else {
@@ -141,7 +218,6 @@ public class Events : MonoBehaviour
 
     }
 
-
     //Общие
     
     public void FreeDay(){
@@ -151,12 +227,12 @@ public class Events : MonoBehaviour
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
         //Общее для всех вариантов
         
-        byte AnswerCount = 2;
+        
         byte b = 0;
-        string[] DisionText = new string[AnswerCount];
-        string[] DisionTip = new string[AnswerCount];
-        string[] DisionReq = new string[AnswerCount];
-        string[] DisionLead = new string[AnswerCount];
+        string[] DisionText = new string[6];
+        string[] DisionTip = new string[6];
+        string[] DisionReq = new string[6];
+        string[] DisionLead = new string[6];
 
         DisionText[b]="Сыграть в теннис";
         DisionTip[b]="Полезно для здоровья";
@@ -175,18 +251,19 @@ public class Events : MonoBehaviour
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
         
+        b+=1;
         //Проход по тоглам
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
-            if(i<=AnswerCount) {
+            if(i<=b) {
                 Transform Ans;
                 Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
-                g.TextRequires.GetComponent<Text>().text = DisionReq[i-1];
-                g.TextTip.GetComponent<Text>().text = DisionTip[i-1];
+                g.QuestTip[i-1]=DisionTip[i-1];
+                g.QuestReq[i-1]=DisionReq[i-1];
                 }
                 
             else {

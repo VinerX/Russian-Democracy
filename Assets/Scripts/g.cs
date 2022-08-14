@@ -27,6 +27,7 @@ public static class g
     //Статы
     // Если массив 1 - значение сейчас, 2 изменение за ход
     //Статы персонажа
+    public static float[] polits = {50f,+1f};
     public static float[] hp = {25f,+1f};
     public static float[] popularity = {25f,0f};
     public static float[] stress = {25f,-1f};
@@ -38,6 +39,7 @@ public static class g
     public static Scrollbar popularity_s = GameObject.Find("ScrollbarPopularity2").GetComponent<Scrollbar>();
     public static Scrollbar stress_s = GameObject.Find("ScrollbarStress2").GetComponent<Scrollbar>();
     public static Scrollbar drinking_s = GameObject.Find("ScrollbarDrinking2").GetComponent<Scrollbar>();
+    public static Text polits_t = GameObject.Find("Polit").GetComponent<Text>();
     
     public static GameObject Screens = GameObject.Find("Screens");
 
@@ -47,7 +49,7 @@ public static class g
     public static int Year = 1991;
     public static int Month = 8;
     public static int Part = 4;
-    public static Text DateText =  GameObject.Find("Date").GetComponent<Text>();
+    public static Text DateText = GameObject.Find("Date").GetComponent<Text>();
 
 
 
@@ -59,14 +61,17 @@ public static class g
     public static GameObject QuestTitle = GameObject.Find("QuestTitle");
     public static GameObject QuestText = GameObject.Find("QuestText");
     public static GameObject QuestImage = GameObject.Find("QuestImage");
+    public static string[] QuestReq = new string[6];
+    public static string[] QuestTip = new string[6];
 
 
+    public static bool QuestMenuNow = true;
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
     //public static GameObject[] = g.AnswerPanel.GetComponent<RectTransform>().GetComponentsInChildren
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");
     public static GameObject TextTip = GameObject.Find("TextTip");
-
+    
 
     //Меню результата
     public static Dictionary<string,string> ResultDict = new Dictionary<string,string>();

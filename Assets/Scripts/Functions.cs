@@ -12,6 +12,8 @@ public class Functions : MonoBehaviour
         g.popularity_s.size =(float)g.popularity[0]/100;
         g.stress_s.size = (float)g.stress[0]/100;
         g.drinking_s.size = (float)g.drinking[0]/100;
+        g.polits_t.text = "Полит.Сила: "+g.polits[0].ToString();
+        
     }
 
     public void SetChange(){
@@ -22,6 +24,7 @@ public class Functions : MonoBehaviour
         g.drinking[0]+=g.drinking[1];
         if (g.drinking[0]>55f) g.QC.AddQuest("DangerDrinking");
         g.popularity[0]+=g.popularity[1];
+        g.polits[0]+=g.polits[1];
         
     }
 
@@ -50,7 +53,7 @@ public class Functions : MonoBehaviour
             
             case "popularity":
                 
-                g.DefeatBg.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Die");
+                g.DefeatBg.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Doloy2");
                 g.DefeatTextTitle.GetComponent<Text>().text = "Ультиматум";
                 g.DefeatText.GetComponent<Text>().text ="У вас абсолютно нет поддержки. Вся страна желает вам смерти, и это в лучшем случае. Ваше окружание "+
                 "намекнуло, что уходить надо именно сейчас, и желательно куда-нибудь в другую страну, так как шанс заговара или покушения максимально высок. "
@@ -59,7 +62,7 @@ public class Functions : MonoBehaviour
             
             case "stress":
                 
-                g.DefeatBg.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/Die");
+                g.DefeatBg.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/stress");
                 g.DefeatTextTitle.GetComponent<Text>().text = "Сердечный приступ";
                 g.DefeatText.GetComponent<Text>().text ="Политика - дело грязное, и очень нервное." +
                 "На вашу долю выпало слишком много трудностей - нервная система не справилась. Случился приступ." +

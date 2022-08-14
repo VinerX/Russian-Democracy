@@ -10,17 +10,29 @@ public class Buttons : MonoBehaviour
     //Тут ловлю все кнопки
 
     //Поменять инфо или выбор
-    private bool i=false;
+    
+
+
+
+    void ShowAnswerM(){
+        g.AnswerPanel.SetActive(true);
+        g.QuestPanel.SetActive(false);
+        g.QuestMenuNow=false;
+    }
+    void ShowQuestM(){
+        g.AnswerPanel.SetActive(false);
+        g.QuestPanel.SetActive(true);
+        g.QuestMenuNow=true;
+    }
+
+
     public void ChangeQuest(){
-        if(i==false){
-            g.AnswerPanel.SetActive(true);
-            g.QuestPanel.SetActive(false);
-            i = true;
+
+        if(g.QuestMenuNow==false){
+            ShowQuestM();
         }
         else {
-            g.AnswerPanel.SetActive(false);
-            g.QuestPanel.SetActive(true);
-            i = false;
+            ShowAnswerM();
         }
 
     }
@@ -211,6 +223,7 @@ public class Buttons : MonoBehaviour
     //https://metanit.com/sharp/tutorial/4.5.php
     public void LastQuest(){
         g.ResultDict.Clear();
+        ShowQuestM();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == 0) { //Если край левый 
@@ -231,6 +244,7 @@ public class Buttons : MonoBehaviour
 
     public void NextQuest(){
         g.ResultDict.Clear(); 
+        ShowQuestM();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == g.QuestGroup.Count-1) { //Если край левый 
@@ -250,8 +264,10 @@ public class Buttons : MonoBehaviour
     }
 
     public void Finish(){
+        
         Debug.Log(g.QuestToSolve.ToString()+" квестов на момент нажатия");
         if (g.QuestToSolve==0){
+            ShowQuestM();
             g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(false);
             
             g.QuestGroup.Clear();
@@ -260,7 +276,16 @@ public class Buttons : MonoBehaviour
 
             g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(true);
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
-            g.Result.BroadcastMessage( g.ResultGroup[0]);
+            
+            if (g.ResultGroup[0]!="None")
+                g.Result.BroadcastMessage( g.ResultGroup[0]);
+            else {
+
+                if (g.ResultGroup.Count==1){
+                    g.Result.NoneRes();
+                    
+                                }
+                }
             g.ResultGroup.Remove(g.ResultNow);
             
             
@@ -270,12 +295,21 @@ public class Buttons : MonoBehaviour
 
 
     public void NextResult(){
-        Debug.Log("Результат на момент некст резалта" +g.Results.ToString());
+        //Debug.Log("Результат на момент некст резалта" +g.Results.ToString());
         g.Results-=1;
-        Debug.Log("Результат на момент после некст резалта"+g.Results.ToString());
+        //Debug.Log("Результат на момент после некст резалта"+g.Results.ToString());
         if (g.Results!=0) {
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
-            g.Result.BroadcastMessage( g.ResultGroup[0]);
+            if ( g.ResultGroup[0]!="None")
+                g.Result.BroadcastMessage( g.ResultGroup[0]);
+            else {
+                g.ResultGroup.Remove("None");
+                
+                if(g.ResultGroup.Count>0){ 
+                    g.Results-=1;
+                    g.Result.BroadcastMessage( g.ResultGroup[0]);
+                }
+            }
             g.ResultGroup.Remove(g.ResultNow);
             
         }
