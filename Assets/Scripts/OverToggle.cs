@@ -7,7 +7,7 @@ public class OverToggle : MonoBehaviour
 {
 
 
-    private void Start() {
+    private void Awake() {
         
         for (byte i=1;i<=6;i++){
         GameObject t = GameObject.Find("Answer"+i.ToString());
@@ -22,7 +22,7 @@ public class OverToggle : MonoBehaviour
 
     private void OnMouseOver() {
         string i = gameObject.name.Substring(6,1);
-        int b= int.Parse(i)-1;
+        int b = int.Parse(i)-1;
         g.TextTip.GetComponent<Text>().text=g.QuestTip[b];
         g.TextRequires.GetComponent<Text>().text=g.QuestReq[b];
                 
