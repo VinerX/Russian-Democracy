@@ -5,7 +5,7 @@ public class Door : MonoBehaviour
 {
   [SerializeField] private Date _date;
   public void Click(){
-    _date.DataPlus();
+    
     
     g.SaS.CheckDef();
     g.SaS.SetChange();

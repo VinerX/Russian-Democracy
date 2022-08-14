@@ -15,7 +15,7 @@ public class Events : MonoBehaviour
         string QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
         " - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
-        byte AnswerCount = 1;
+        byte AnswerCount = 2;
         string[] DisionText = new string[AnswerCount];
         string[] DisionTip = new string[AnswerCount];
         string[] DisionReq = new string[AnswerCount];
@@ -29,6 +29,11 @@ public class Events : MonoBehaviour
         DisionReq[b]="Соблюдать постельный режим. (Требований нет)";
         DisionLead[b]="HPHealing"; //к ивенту лег в больницу
  
+        b +=1;
+        DisionText[b]="Принять таблетки";
+        DisionTip[b]="Немного поправит здоровье";
+        DisionReq[b]="Запивать водой (Требований нет)";
+        DisionLead[b]="HPCure"; //к ивенту лег в больницу
 
 
         //Собственно установка
@@ -143,7 +148,7 @@ public class Events : MonoBehaviour
         g.QuestNow="FreeDay";
         string QuestTitle="Свободный день";
         string QuestText="Никаких проблем сегодня решать не надо, можно потратить время на себя";        
-        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest   ");
+        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
         //Общее для всех вариантов
         
         byte AnswerCount = 2;

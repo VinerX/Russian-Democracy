@@ -9,7 +9,7 @@ public static class g
     //Подключить другие скрипты для функций
     public static Functions SaS = GameObject.Find("State").GetComponent<Functions>();
     public static Events Event = GameObject.Find("EventsO").GetComponent<Events>();
-    
+    public static Init Init = GameObject.Find("InitO").GetComponent<Init>();
     public static QuestControl QC = GameObject.Find("QuestControlO").GetComponent<QuestControl>();
     
 
@@ -40,6 +40,16 @@ public static class g
     public static Scrollbar drinking_s = GameObject.Find("ScrollbarDrinking2").GetComponent<Scrollbar>();
     
     public static GameObject Screens = GameObject.Find("Screens");
+
+
+
+    //Даты 
+    public static int Year = 1991;
+    public static int Month = 8;
+    public static int Part = 4;
+    public static Text DateText =  GameObject.Find("Date").GetComponent<Text>();
+
+
 
     // Меню квеста
     public static GameObject QuestMenu = GameObject.Find("QuestMenu");

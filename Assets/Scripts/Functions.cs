@@ -97,6 +97,19 @@ public class Functions : MonoBehaviour
 
     }
 
+    public void DataPlus()
+    {
+    g.Part += 1;
+    if(g.Part > 4){
+        g.Part = 1;
+        g.Month += 1;
+        if(g.Month > 12){
+        g.Month = 1;
+        g.Year += 1;
+        }
+    }
+    g.DateText.text = g.Year + "." + g.Month + ".(" + g.Part + ").";
+    }
     
 
 

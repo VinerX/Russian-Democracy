@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class Buttons : MonoBehaviour
 {
 
@@ -35,6 +37,7 @@ public class Buttons : MonoBehaviour
 
 
         }
+        Debug.Log("Квестов на момент входа " + g.QuestToSolve);
         OnTogglesInteract();
         g.AnswerPanel.SetActive(false);
         g.QuestPanel.SetActive(true);
@@ -42,7 +45,7 @@ public class Buttons : MonoBehaviour
         for (byte i=1; i<=6;i++){
             Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
             AnsT.interactable=true;
-            AnsT.isOn=false;
+            //AnsT.isOn=false;
         }
         
         g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(true);
@@ -66,12 +69,17 @@ public class Buttons : MonoBehaviour
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
-        g.Results+=1; //Временно
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
     }
     public void Toggle2(){
@@ -80,10 +88,16 @@ public class Buttons : MonoBehaviour
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
         
     }
@@ -93,10 +107,16 @@ public class Buttons : MonoBehaviour
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
         
     }
@@ -107,10 +127,16 @@ public class Buttons : MonoBehaviour
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
         
     }
@@ -121,10 +147,16 @@ public class Buttons : MonoBehaviour
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
        
     }
@@ -135,16 +167,22 @@ public class Buttons : MonoBehaviour
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultGroup.Add(Res);
         OffTogles(AnserId);
+        Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
         { 
+        //Debug.Log("Проверку прошла, такого не было " + g.QuestNow);
         g.SolvedQuests.Add(g.QuestNow);
+        //Debug.Log("Квестов осталось решить до вычета"+g.QuestToSolve.ToString());
         g.QuestToSolve-=1;
+        //Debug.Log("Квестов осталось после вычета"+g.QuestToSolve.ToString());
+        g.Results+=1;
+        
         }
        
     }
 
     public void OffTogles(int id){
-        Debug.Log("Квестов осталось решить"+(g.QuestToSolve-1).ToString());
+        
         for (byte i=1; i<=6;i++){
             Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
             if(id==i){
@@ -165,7 +203,7 @@ public class Buttons : MonoBehaviour
             if ( !g.SolvedQuests.Contains(g.QuestNow))  {
             Toggle AnsT = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.GetComponent<Toggle>();
             AnsT.interactable=true;
-            AnsT.isOn=false;
+            //AnsT.isOn=false;
         }}}
 
 
@@ -212,6 +250,7 @@ public class Buttons : MonoBehaviour
     }
 
     public void Finish(){
+        Debug.Log(g.QuestToSolve.ToString()+" квестов на момент нажатия");
         if (g.QuestToSolve==0){
             g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(false);
             
@@ -223,33 +262,50 @@ public class Buttons : MonoBehaviour
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
             g.Result.BroadcastMessage( g.ResultGroup[0]);
             g.ResultGroup.Remove(g.ResultNow);
-            g.Results-=1;
+            
             
         }
     }
 
 
+
     public void NextResult(){
-        Debug.Log("Есть нажатие");
-        if (g.Results>1) {
+        Debug.Log("Результат на момент некст резалта" +g.Results.ToString());
+        g.Results-=1;
+        Debug.Log("Результат на момент после некст резалта"+g.Results.ToString());
+        if (g.Results!=0) {
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
             g.Result.BroadcastMessage( g.ResultGroup[0]);
             g.ResultGroup.Remove(g.ResultNow);
-            g.Results-=1;
+            
         }
         else {
             g.SaS.SetChange();
             g.SaS.SetGrafics();
+            g.SaS.DataPlus();
             g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(false);
             g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
             g.ResultGroup.Clear();
-            g.Results=0;
+            g.SaS.CheckDef();
+            
         }
     }
 
 
 
+    public void DefeatButton()
+    {
 
+        g.SaS.ScreensOff(false);
+        g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
+        //Scene Cn = SceneManager.GetActiveScene();
+        //SceneManager.UnloadSceneAsync(Cn.name);
+        //SceneManager.LoadScene("MainMenu");
+        //SceneManager.UnloadSceneAsync("MainGameMenu");
+       // SceneManager.LoadScene("MainGameMenu");
+        g.Init.init();
+        //SceneManager.UnloadSceneAsync("MainMenu");
+    }
 
 }
 

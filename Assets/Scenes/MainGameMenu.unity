@@ -1094,7 +1094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.021395834, y: 0.033148147}
   m_AnchorMax: {x: 0.21356252, y: 0.36240745}
-  m_AnchoredPosition: {x: 1529, y: -73.83502}
+  m_AnchoredPosition: {x: 1529.0001, y: -73.83502}
   m_SizeDelta: {x: -153.218, y: -147.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115795703
@@ -3990,10 +3990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d096f7c3178c1b44ad5580c96e8a8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Year: 1991
-  Month: 8
-  Part: 4
-  DateText: {fileID: 419104548}
 --- !u!222 &419104550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16315,7 +16311,7 @@ GameObject:
   - component: {fileID: 1560324687}
   - component: {fileID: 1560324688}
   m_Layer: 0
-  m_Name: Init
+  m_Name: InitO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20305,10 +20301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d096f7c3178c1b44ad5580c96e8a8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Year: 1991
-  Month: 8
-  Part: 4
-  DateText: {fileID: 1924952111}
 --- !u!1 &1942287325
 GameObject:
   m_ObjectHideFlags: 0
@@ -21425,7 +21417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2062318296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21724,14 +21716,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2074689602}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2074689604}
-        m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: Click
+      - m_Target: {fileID: 1777965290}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: Finish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

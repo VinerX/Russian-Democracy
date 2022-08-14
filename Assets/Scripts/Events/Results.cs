@@ -14,6 +14,15 @@ public class Results : MonoBehaviour
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Menus/MainGame/Yeltsin");
     }
 
+    public void HPCure(){
+        //Debug.Log("Результат");
+        g.ResultNow = "HPCure";
+        g.hp[0]+=1f;
+        g.ResultTitle.GetComponent<Text>().text= "Таблеточки";
+        g.ResultText.GetComponent<Text>().text = "Не больница, но тоже не плохо";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Menus/MainGame/Yeltsin");
+    }
+
     public void DrinkingStop(){
         //Debug.Log("Результат");
         g.ResultNow = "DrinkingStop";
