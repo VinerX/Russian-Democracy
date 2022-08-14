@@ -81,7 +81,7 @@ public static class g
     public static Results Result = GameObject.Find("ResultsO").GetComponent<Results>();
     public static string ResultNow;
     public static int Results = 0;
-    public static Dictionary<string,string> ResultGroup = new Dictionary<string,string>();
+    public static List<string> ResultGroup = new List<string>();
     public static GameObject ResultPanel = GameObject.Find("ResultPanel");
     public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
     public static GameObject ResultText = GameObject.Find("ResultText");

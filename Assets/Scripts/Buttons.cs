@@ -86,7 +86,7 @@ public class Buttons : MonoBehaviour
         int AnserId=1;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -102,7 +102,7 @@ public class Buttons : MonoBehaviour
         int AnserId=2;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -118,7 +118,7 @@ public class Buttons : MonoBehaviour
         int AnserId=3;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -135,7 +135,7 @@ public class Buttons : MonoBehaviour
         int AnserId=4;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -152,7 +152,7 @@ public class Buttons : MonoBehaviour
         int AnserId=5;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -169,7 +169,7 @@ public class Buttons : MonoBehaviour
         int AnserId=6;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultGroup.Add("Answer"+AnserId.ToString(), Res);
+        g.ResultGroup.Add(Res);
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
