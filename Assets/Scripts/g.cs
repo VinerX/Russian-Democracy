@@ -119,5 +119,24 @@ public static class g
     //new List<GameObject>();
 
    
-   
+
+
+
+    // Ивент - крушение союза
+    public static int Opinion_Pribaltic=5;
+    public static int Opinion_Belarus=5;
+    public static int Opinion_Ukraine=5;
+    public static int Opinion_Moldavia=5;
+    public static int Opinion_Kavkaz=5;
+    public static int Opinion_Asia=5;
+
+
+
+
+
+
+
+
+
+
 }
