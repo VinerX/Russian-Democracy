@@ -44,6 +44,7 @@ public class Events : MonoBehaviour
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
         
@@ -138,6 +139,7 @@ public class Events : MonoBehaviour
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
 
@@ -227,6 +229,7 @@ public class Events : MonoBehaviour
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
 
@@ -316,8 +319,11 @@ public class Events : MonoBehaviour
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
+        
 
 
         
@@ -406,6 +412,7 @@ public class Events : MonoBehaviour
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
+        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
         

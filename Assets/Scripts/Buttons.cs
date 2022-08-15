@@ -63,7 +63,7 @@ public class Buttons : MonoBehaviour
         
         g.AnswerPanel.SetActive(false);
         g.QuestPanel.SetActive(true);
-
+        g.QuestCount.GetComponent<Text>().text="Квест 1/"+g.QuestToSolve;
         
         
         g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(true);
@@ -86,7 +86,7 @@ public class Buttons : MonoBehaviour
         int AnserId=1;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -102,7 +102,7 @@ public class Buttons : MonoBehaviour
         int AnserId=2;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -118,7 +118,7 @@ public class Buttons : MonoBehaviour
         int AnserId=3;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -135,7 +135,7 @@ public class Buttons : MonoBehaviour
         int AnserId=4;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -152,7 +152,7 @@ public class Buttons : MonoBehaviour
         int AnserId=5;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -169,7 +169,7 @@ public class Buttons : MonoBehaviour
         int AnserId=6;
         string Res;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
-        g.ResultFor1[AnserId]=Res;
+        g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
         Debug.Log("Квест сейчас" + g.QuestNow);
         if( !g.SolvedQuests.Contains(g.QuestNow))
@@ -214,6 +214,7 @@ public class Buttons : MonoBehaviour
         g.ResultDict.Clear();
         ShowQuestM();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
+        
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == 0) { //Если край левый 
             Debug.Log("К другому концу");
@@ -228,6 +229,7 @@ public class Buttons : MonoBehaviour
             g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
         }
+        g.QuestCount.GetComponent<Text>().text="Квест "+(QuestId+1).ToString()+"/"+g.QuestGroup.Count.ToString();
         OnTogglesInteract();
     }
 
@@ -235,6 +237,7 @@ public class Buttons : MonoBehaviour
         g.ResultDict.Clear(); 
         ShowQuestM();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
+        
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == g.QuestGroup.Count-1) { //Если край левый 
             Debug.Log("К другому концу");
@@ -249,6 +252,7 @@ public class Buttons : MonoBehaviour
             g.Event.BroadcastMessage( g.QuestGroup[QuestId]);
             g.QuestNow= g.QuestGroup[QuestId];
         }
+        g.QuestCount.GetComponent<Text>().text="Квест "+(QuestId+1).ToString()+"/"+g.QuestGroup.Count.ToString();
         OnTogglesInteract();
     }
 
@@ -266,13 +270,6 @@ public class Buttons : MonoBehaviour
             g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(true);
 
 
-
-            // foreach(string El in g.ResultFor1){
-            //     if (string.IsNullOrEmpty(El)==false) {
-            //         Debug.Log("Добавил элемент+"+El);
-            //         g.ResultGroup.Add(El); }
-                
-            // }
             for(byte i=0;i<g.ResultFor1.Length;i++){
                 if (string.IsNullOrEmpty(g.ResultFor1[i])==false){
                     Debug.Log("Добавил элемент+" + g.ResultFor1[i]);
@@ -296,7 +293,7 @@ public class Buttons : MonoBehaviour
                     
                                 }
                 }
-            g.ResultGroup.Remove(g.ResultNow);
+            g.ResultGroup.RemoveAt(0);
             
             
         }
@@ -308,19 +305,21 @@ public class Buttons : MonoBehaviour
         //Debug.Log("Результат на момент некст резалта" +g.Results.ToString());
         g.Results-=1;
         //Debug.Log("Результат на момент после некст резалта"+g.Results.ToString());
-        if (g.Results!=0) {
+        if (g.ResultGroup.Count>0) {
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
+            Debug.Log("Резов осталось... "+g.Results.ToString());
             if ( g.ResultGroup[0]!="None")
                 g.Result.BroadcastMessage( g.ResultGroup[0]);
             else {
-                g.ResultGroup.Remove("None");
+                g.ResultGroup.RemoveAt(0);
                 
+                Debug.Log("Резов осталось... "+g.Results.ToString());
                 if(g.ResultGroup.Count>0){ 
                     g.Results-=1;
                     g.Result.BroadcastMessage( g.ResultGroup[0]);
-                }
+                }   Debug.Log("Пересылаю... "+g.ResultGroup[0].ToString());
             }
-            g.ResultGroup.Remove(g.ResultNow);
+            g.ResultGroup.RemoveAt(0);
             
         }
         else {

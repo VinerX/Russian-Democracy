@@ -38,6 +38,8 @@ public static class g
     //Конец стат персонажа
 
     // Объекты интерфейса
+
+    // Графика персонажа
     public static Scrollbar hp_s = GameObject.Find("ScrollbarHp").GetComponent<Scrollbar>();
     public static Scrollbar popularity_s = GameObject.Find("ScrollbarPopularity2").GetComponent<Scrollbar>();
     public static Scrollbar stress_s = GameObject.Find("ScrollbarStress2").GetComponent<Scrollbar>();
@@ -45,7 +47,7 @@ public static class g
     public static Text polits_t = GameObject.Find("Polit").GetComponent<Text>();
     
     public static GameObject Screens = GameObject.Find("Screens");
-
+    //
 
 
     //Даты 
@@ -64,13 +66,13 @@ public static class g
     public static GameObject QuestTitle = GameObject.Find("QuestTitle");
     public static GameObject QuestText = GameObject.Find("QuestText");
     public static GameObject QuestImage = GameObject.Find("QuestImage");
+    public static GameObject QuestCount = GameObject.Find("QuestCount");
     public static string[] QuestReq = new string[6];
     public static string[] QuestTip = new string[6];
     public static bool[] QuestOn = {true,true,true,true,true,true};
-
     public static bool QuestMenuNow = true;
+
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
-    //public static GameObject[] = g.AnswerPanel.GetComponent<RectTransform>().GetComponentsInChildren
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");
     public static GameObject TextTip = GameObject.Find("TextTip");
@@ -87,14 +89,7 @@ public static class g
     public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
     public static GameObject ResultText = GameObject.Find("ResultText");
     public static GameObject ResultImage = GameObject.Find("ResultImage");
-    
-
-
-
-
-     // Меню квеста
-    
-    
+      
     
     
     // Меню поражения
