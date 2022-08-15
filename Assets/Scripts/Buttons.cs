@@ -287,8 +287,9 @@ public class Buttons : MonoBehaviour
             if (g.ResultGroup[0]!="None")
                 g.Result.BroadcastMessage( g.ResultGroup[0]);
             else {
-
+                Debug.Log("Нон");
                 if (g.ResultGroup.Count==1){
+                    Debug.Log("Нон и 1 ");
                     g.Result.NoneRes();
                     
                                 }
@@ -308,18 +309,30 @@ public class Buttons : MonoBehaviour
         if (g.ResultGroup.Count>0) {
             Debug.Log("Отсылаю... "+g.ResultGroup[0].ToString());
             Debug.Log("Резов осталось... "+g.Results.ToString());
-            if ( g.ResultGroup[0]!="None")
+            if ( g.ResultGroup[0]!="None") {
                 g.Result.BroadcastMessage( g.ResultGroup[0]);
-            else {
                 g.ResultGroup.RemoveAt(0);
-                
-                Debug.Log("Резов осталось... "+g.Results.ToString());
-                if(g.ResultGroup.Count>0){ 
-                    g.Results-=1;
-                    g.Result.BroadcastMessage( g.ResultGroup[0]);
-                }   Debug.Log("Пересылаю... "+g.ResultGroup[0].ToString());
             }
-            g.ResultGroup.RemoveAt(0);
+
+
+            else{
+                g.ResultGroup.RemoveAt(0);
+                NextResult();
+            }
+            //Попялся пустой ответ
+            // else {
+            //     g.ResultGroup.RemoveAt(0);
+                
+            //     Debug.Log("Резов осталось... "+g.Results.ToString());
+            //     if(g.ResultGroup.Count>0){ 
+            //        g.Results-=1;
+            //        g.Result.BroadcastMessage( g.ResultGroup[0]);
+            //        Debug.Log("Пересылаю... "+g.ResultGroup[0].ToString());
+            //        g.ResultGroup.RemoveAt(0); 
+                   
+            //     }
+            // }
+            
             
         }
         else {
