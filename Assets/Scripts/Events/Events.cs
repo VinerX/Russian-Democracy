@@ -18,7 +18,7 @@ public class Events : MonoBehaviour
     Sprite ImageSprite;
     byte b = 0;
 
-
+    
 
     public void DangerHp(){
         g.QuestNow="DangerHp";

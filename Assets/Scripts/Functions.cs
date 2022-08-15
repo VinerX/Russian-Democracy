@@ -32,6 +32,8 @@ public class Functions : MonoBehaviour
         
         g.popularity[0]+=g.popularity[1];
         if (g.popularity[0]<15f) g.QC.AddQuest("DangerPopularity");
+        else uf (g.popularity[0]>100f) g.popularity[0]=100f;
+        
         g.polits[0]+=g.polits[1];
         if (g.polits[0]<0f) g.polits[0]=0;
     }
