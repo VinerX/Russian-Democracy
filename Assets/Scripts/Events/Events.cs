@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Events : MonoBehaviour
 {
 
-
+    // Реализовать можно 3 типа кнопок - кнопки простые, с условиями и скрытые по условиям
 
     //Блок предупредительных ивентов
     
@@ -408,7 +408,7 @@ public class Events : MonoBehaviour
         DisionTip[b]="Снимает стресс";
         DisionReq[b]="Не переусердствуйте (Требований нет)";
         DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
-        if (5>3) DisionOn[b]=false;
+        // if (5>3) DisionOn[b]=false;
 
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;

@@ -72,6 +72,7 @@ public static class g
     public static bool[] QuestOn = {true,true,true,true,true,true};
     public static bool QuestMenuNow = true;
 
+    //Панель ответа
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");

@@ -363,5 +363,35 @@ public class Buttons : MonoBehaviour
         //SceneManager.UnloadSceneAsync("MainMenu");
     }
 
+
+
+
+    public void SpecialEvent(){
+
+        g.SaS.ScreensOff(false);
+        g.Screens.GetComponent<Transform>().Find("EventUnionCollapse").gameObject.SetActive(true);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
