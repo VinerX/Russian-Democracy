@@ -73,4 +73,74 @@ public class Results : MonoBehaviour
         g.ResultText.GetComponent<Text>().text = "Хоть вы и президент, но такое все-равно случается. Неделя прошла вообще без проишествий. Но скучно.";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/FunnyYeltsin");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Резы ивентов
+    public void SaveUnion(){
+        g.ResultNow = "SaveUnion";
+        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
+    }
+    public void MakeFederation(){
+        g.ResultNow = "SaveUnion";
+        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
+    }
+    public void MakeConfederacy(){
+        g.ResultNow = "SaveUnion";
+        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
+    }
+    public void MakeSNG(){
+        g.ResultNow = "SaveUnion";
+        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
+    }
+    public void OnlyRussia(){
+        g.ResultNow = "SaveUnion";
+        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

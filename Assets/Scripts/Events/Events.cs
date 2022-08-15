@@ -8,19 +8,24 @@ public class Events : MonoBehaviour
     // Реализовать можно 3 типа кнопок - кнопки простые, с условиями и скрытые по условиям
 
     //Блок предупредительных ивентов
-    
+    string[] DisionText = new string[6];
+    string[] DisionTip = new string[6];
+    string[] DisionReq = new string[6];
+    bool[] DisionOn = {true,true,true,true,true,true};
+    string[] DisionLead = new string[6];
+    string QuestTitle;
+
+
+
+
     public void DangerHp(){
         g.QuestNow="DangerHp";
-        string QuestTitle="Угроза: Слабое здоровье";
+        QuestTitle="Угроза: Слабое здоровье";
         string QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
         " - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
         
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
 
 
@@ -85,7 +90,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
@@ -106,16 +111,12 @@ public class Events : MonoBehaviour
     }
     public void DangerDrinking(){
         g.QuestNow="DangerDrinking";
-        string QuestTitle="Угроза: злоупотребление спиртным";
+        QuestTitle="Угроза: злоупотребление спиртным";
         string QuestText="Остановитесь. Хватит пить водку. Вы так долго не протянете";
         //" - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Drinking");
         
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
 
 
@@ -179,7 +180,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
@@ -201,15 +202,11 @@ public class Events : MonoBehaviour
 
     public void DangerPopularity(){
         g.QuestNow="DangerPopularity";
-        string QuestTitle="Угроза: непопулярность";
+        QuestTitle="Угроза: непопулярность";
         string QuestText="Прогнозы неутешительные. Рейтинг идет к нулю, надо что-то менять";
         Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Karik");
         
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
 
 
@@ -269,7 +266,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
@@ -291,15 +288,11 @@ public class Events : MonoBehaviour
 
     public void DangerStress(){
         g.QuestNow="DangerStress";
-        string QuestTitle="Угроза: постоянный стресс";
+        QuestTitle="Угроза: постоянный стресс";
         string QuestText="Вам очень тяжело. Кажется, даже сердце начинает побаливать. Может что-то предпринять.";
         Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Stress");
         
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
 
 
@@ -361,7 +354,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
@@ -385,18 +378,14 @@ public class Events : MonoBehaviour
     
     public void FreeDay(){
         g.QuestNow="FreeDay";
-        string QuestTitle="Свободный день";
+        QuestTitle="Свободный день";
         string QuestText="Никаких проблем сегодня решать не надо, можно потратить время на себя";        
         Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
         //Общее для всех вариантов
         
         
         byte b = 0;
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
         DisionText[b]="Сыграть в теннис";
         DisionTip[b]="Полезно для здоровья";
@@ -451,7 +440,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
@@ -486,7 +475,7 @@ public class Events : MonoBehaviour
     
     public void SovietCollapseStart(){
         g.QuestNow="SovietCollapseStart";
-        string QuestTitle="Союз трещит";
+        QuestTitle="Союз трещит";
         string QuestText="ГКЧП заметно повлиял Ново-Огаревский процесс. Теперь республики требуют еще больше независимости, "
         +"еще больше привелегий, чтобы что-то подписать. Что в такой ситуации делать?";        
         Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
@@ -494,40 +483,36 @@ public class Events : MonoBehaviour
         
         
         byte b = 0;
-        string[] DisionText = new string[6];
-        string[] DisionTip = new string[6];
-        string[] DisionReq = new string[6];
-        bool[] DisionOn = {true,true,true,true,true,true};
-        string[] DisionLead = new string[6];
+        
 
         DisionText[b]="Нужно сохранить СССР... по крайней мере его границы";
         DisionTip[b]="";
-        DisionReq[b]="";
-        DisionLead[b]="None"; 
+        DisionReq[b]="Очень сложная задача. Нужны отношения 95 со всеми выбранными республиками";
+        DisionLead[b]="SaveUnion"; 
 
         b+=1;
         DisionText[b]="Из республик должна получится неплохая федерация ССГ";
         DisionTip[b]="";
-        DisionReq[b]="";
-        DisionLead[b]="None"; 
+        DisionReq[b]="Задача средней сложности, нужно 75 отношений со всеми выбранными ресбуликами";
+        DisionLead[b]="MakeFederation"; 
         
         b+=1;
         DisionText[b]="Конфедерация - наш компромисс с республиками ССГ";
         DisionTip[b]="";
-        DisionReq[b]="";
-        DisionLead[b]="None"; 
+        DisionReq[b]="Требуется 50 очков отношений с выбранными республиками";
+        DisionLead[b]="MakeConfederacy"; 
         
         b+=1;
         DisionText[b]="Республики уже де-факто ушли. Создаем СНГ";
         DisionTip[b]="";
-        DisionReq[b]="";
-        DisionLead[b]="None"; 
+        DisionReq[b]="Требуется 25 очков отношений с выбранными республиками";
+        DisionLead[b]="MakeSNG"; 
         
         b+=1;
         DisionText[b]="Никаких связей с Республиками, которые забрали все у России!";
-        DisionTip[b]="";
-        DisionReq[b]="";
-        DisionLead[b]="None"; 
+        DisionTip[b]="Быстро завершает серию ивентов, Россия выходит из Союза.";
+        DisionReq[b]="Решимость Русского Медведя (Требований нет)";
+        DisionLead[b]="OnlyRussia"; 
         
 
         //Собственно установка
