@@ -59,7 +59,7 @@ public static class g
 
     // Дата - добавление ивента
     public static Dictionary<string,string> DateEvent= new Dictionary<string,string>{
-    {"1993.9.(1)","SovietCollapseStart"}
+    {"1991.9.(1)","SovietCollapseStart"}
 
     };
 

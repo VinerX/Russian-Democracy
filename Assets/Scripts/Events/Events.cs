@@ -59,9 +59,9 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -153,9 +153,9 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -243,9 +243,9 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -335,9 +335,9 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -425,9 +425,9 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -545,9 +545,10 @@ public class Events : MonoBehaviour
             if(i<=b) {
                 Transform Ans;
                 Ans = g.Answer[i-1].GetComponent<Transform>();
-                Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
+                g.Answer[i-1].SetActive(true);
+                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
+                
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
                 g.QuestOn[i-1]=DisionOn[i-1];
@@ -571,7 +572,7 @@ public class Events : MonoBehaviour
 
 
             else {
-                g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(false);
+                g.Answer[i-1].SetActive(false);
             }
             
 
