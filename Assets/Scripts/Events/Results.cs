@@ -121,7 +121,7 @@ public class Results : MonoBehaviour
     }
     public void OnlyRussia(){
         g.ResultNow = "SaveUnion";
-        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultTitle.GetComponent<Text>().text= "Россия сама по себе";
         g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");

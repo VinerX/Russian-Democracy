@@ -14,22 +14,19 @@ public class Events : MonoBehaviour
     bool[] DisionOn = {true,true,true,true,true,true};
     string[] DisionLead = new string[6];
     string QuestTitle;
-
+    string QuestText;
+    Sprite ImageSprite;
+    byte b = 0;
 
 
 
     public void DangerHp(){
         g.QuestNow="DangerHp";
         QuestTitle="Угроза: Слабое здоровье";
-        string QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
+        QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
         " - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
-        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
-        
-        
-
-
-
-        byte b = 0;
+        ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
+        b = 0;
         DisionText[b]="Лечь в больницу";
         DisionTip[b]="Ваша политическая власть ослабнет, но здоровье вы поправите";
         DisionReq[b]="Соблюдать постельный режим. (Требований нет)";
@@ -47,80 +44,17 @@ public class Events : MonoBehaviour
         DisionReq[b]="";
         DisionLead[b]="None"; 
 
-        //Собственно установка
-        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.QuestText.GetComponent<Text>().text=QuestText;
-        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-        
-
-        
-        
-        b+=1;
-        //Проход по тоглам
-       for(byte i=1;i<=6;i++)
-        {
-            //Debug.Log("Answer"+i.ToString());
-            if(i<=b) {
-                Transform Ans;
-                Ans = g.Answer[i-1].GetComponent<Transform>();
-                g.Answer[i-1].SetActive(true);
-                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.QuestTip[i-1]=DisionTip[i-1];
-                g.QuestReq[i-1]=DisionReq[i-1];
-                g.QuestOn[i-1]=DisionOn[i-1];
-                if (DisionOn[i-1]==false) {
-                    
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
-
-
-                    }
-                else {
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
-
-
-                }
-
-                    }
-
-
-            else {
-                g.Answer[i-1].SetActive(false);
-            }
-            
-
-
-
-               
-        
-        
-        
-        }
-
-
-
-
-        
+        SetThatQuest();
 
 
     }
     public void DangerDrinking(){
         g.QuestNow="DangerDrinking";
         QuestTitle="Угроза: злоупотребление спиртным";
-        string QuestText="Остановитесь. Хватит пить водку. Вы так долго не протянете";
-        //" - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
-        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Drinking");
+        QuestText="Остановитесь. Хватит пить водку. Вы так долго не протянете";
+        ImageSprite = Resources.Load<Sprite>("Backgrounds/Drinking");
         
-        
-
-
-
-        byte b = 0;
+        b = 0;
         DisionText[b]="Ладно, недельку трезвым побудем...";
         DisionTip[b]="-Алкоголизм, + стресс";
         DisionReq[b]="Держитесь (Требований нет)";
@@ -138,79 +72,21 @@ public class Events : MonoBehaviour
         DisionReq[b]="";
         DisionLead[b]="None"; 
 
-        //Собственно установка
-        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.QuestText.GetComponent<Text>().text=QuestText;
-        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-
-
-        
-        b+=1;
-        //Проход по тоглам
-        for(byte i=1;i<=6;i++)
-        {
-            //Debug.Log("Answer"+i.ToString());
-            if(i<=b) {
-                Transform Ans;
-                Ans = g.Answer[i-1].GetComponent<Transform>();
-                g.Answer[i-1].SetActive(true);
-                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.QuestTip[i-1]=DisionTip[i-1];
-                g.QuestReq[i-1]=DisionReq[i-1];
-                g.QuestOn[i-1]=DisionOn[i-1];
-                if (DisionOn[i-1]==false) {
-                    
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
-
-
-                    }
-                else {
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
-
-
-                }
-
-                    }
-
-
-            else {
-                g.Answer[i-1].SetActive(false);
-            }
+        SetThatQuest();
             
-
-
-
-               
-        
-        
-        
-        }
-
-
-
-
-        
-
-
     }
 
     public void DangerPopularity(){
         g.QuestNow="DangerPopularity";
         QuestTitle="Угроза: непопулярность";
-        string QuestText="Прогнозы неутешительные. Рейтинг идет к нулю, надо что-то менять";
-        Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Karik");
+        QuestText="Прогнозы неутешительные. Рейтинг идет к нулю, надо что-то менять";
+        ImageSprite = Resources.Load<Sprite>("EventImages/Karik");
         
         
 
 
 
-        byte b = 0;
+        b = 0;
         DisionText[b]="Заплатим телевидению ";
         DisionTip[b]="-бюджет администрации президента, +популярность";
         DisionReq[b]="(Требований нет)";
@@ -224,64 +100,9 @@ public class Events : MonoBehaviour
 
 
 
-        //Собственно установка
-        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.QuestText.GetComponent<Text>().text=QuestText;
-        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
+        SetThatQuest();
 
 
-        
-        b+=1;
-        //Проход по тоглам
-        for(byte i=1;i<=6;i++)
-        {
-            //Debug.Log("Answer"+i.ToString());
-            if(i<=b) {
-                Transform Ans;
-                Ans = g.Answer[i-1].GetComponent<Transform>();
-                g.Answer[i-1].SetActive(true);
-                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.QuestTip[i-1]=DisionTip[i-1];
-                g.QuestReq[i-1]=DisionReq[i-1];
-                g.QuestOn[i-1]=DisionOn[i-1];
-                if (DisionOn[i-1]==false) {
-                    
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
-
-
-                    }
-                else {
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
-
-
-                }
-
-                    }
-
-
-            else {
-                g.Answer[i-1].SetActive(false);
-            }
-            
-
-
-
-               
-        
-        
-        
-        }
-
-
-
-
-        
 
 
     }
@@ -289,14 +110,14 @@ public class Events : MonoBehaviour
     public void DangerStress(){
         g.QuestNow="DangerStress";
         QuestTitle="Угроза: постоянный стресс";
-        string QuestText="Вам очень тяжело. Кажется, даже сердце начинает побаливать. Может что-то предпринять.";
-        Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Stress");
+        QuestText="Вам очень тяжело. Кажется, даже сердце начинает побаливать. Может что-то предпринять.";
+        ImageSprite = Resources.Load<Sprite>("EventImages/Stress");
         
         
 
 
 
-        byte b = 0;
+        b = 0;
         DisionText[b]="Рюмочку!";
         DisionTip[b]="-Стресс, -Здоровье, +Алкоголизм";
         DisionReq[b]="(Требований нет)";
@@ -308,70 +129,8 @@ public class Events : MonoBehaviour
         DisionReq[b]="";
         DisionLead[b]="None"; 
 
-
-
-        //Собственно установка
-        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.QuestText.GetComponent<Text>().text=QuestText;
-        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-        
-
-
-        
-        b+=1;
-        //Проход по тоглам
-        for(byte i=1;i<=6;i++)
-        {
-            //Debug.Log("Answer"+i.ToString());
-            if(i<=b) {
-                Transform Ans;
-                Ans = g.Answer[i-1].GetComponent<Transform>();
-                g.Answer[i-1].SetActive(true);
-                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.QuestTip[i-1]=DisionTip[i-1];
-                g.QuestReq[i-1]=DisionReq[i-1];
-                g.QuestOn[i-1]=DisionOn[i-1];
-                if (DisionOn[i-1]==false) {
-                    
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
-
-
-                    }
-                else {
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
-
-
-                }
-
-                    }
-
-
-            else {
-                g.Answer[i-1].SetActive(false);
-            }
-            
-
-
-
-               
-        
-        
-        
-        }
-
-
-
-
-        
-
-
+        SetThatQuest();
+           
     }
 
     //Общие
@@ -379,12 +138,12 @@ public class Events : MonoBehaviour
     public void FreeDay(){
         g.QuestNow="FreeDay";
         QuestTitle="Свободный день";
-        string QuestText="Никаких проблем сегодня решать не надо, можно потратить время на себя";        
-        Sprite ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
+        QuestText="Никаких проблем сегодня решать не надо, можно потратить время на себя";        
+        ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
         //Общее для всех вариантов
         
         
-        byte b = 0;
+        b = 0;
         
 
         DisionText[b]="Сыграть в теннис";
@@ -399,63 +158,10 @@ public class Events : MonoBehaviour
         DisionLead[b]="DrinkingCont"; //к ивенту лег в больницу
         // if (5>3) DisionOn[b]=false;
 
-        //Собственно установка
-        g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
-        g.QuestText.GetComponent<Text>().text=QuestText;
-        g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-        
-        b+=1;
-        //Проход по тоглам
-        
-        for(byte i=1;i<=6;i++)
-        {
-            //Debug.Log("Answer"+i.ToString());
-            if(i<=b) {
-                Transform Ans;
-                Ans = g.Answer[i-1].GetComponent<Transform>();
-                g.Answer[i-1].SetActive(true);
-                Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
-                g.QuestTip[i-1]=DisionTip[i-1];
-                g.QuestReq[i-1]=DisionReq[i-1];
-                g.QuestOn[i-1]=DisionOn[i-1];
-                if (DisionOn[i-1]==false) {
-                    
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.None;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice4");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=false;
+    
+        SetThatQuest();
 
-
-                    }
-                else {
-                    Ans.gameObject.GetComponent<Toggle>().transition=Selectable.Transition.SpriteSwap;
-                    Ans.Find("AnswerTogle"+i.ToString()).gameObject.GetComponent<Image>().sprite= Resources.Load<Sprite>("Choice1");
-                    Ans.gameObject.GetComponent<Toggle>().interactable=true;
-
-
-                }
-
-                    }
-
-
-            else {
-                g.Answer[i-1].SetActive(false);
-            }
-            
-
-
-
-               
-        
-        
-        
-        }
-
-
-
-        
-        
+    
 
 
     }
@@ -476,13 +182,13 @@ public class Events : MonoBehaviour
     public void SovietCollapseStart(){
         g.QuestNow="SovietCollapseStart";
         QuestTitle="Союз трещит";
-        string QuestText="ГКЧП заметно повлиял Ново-Огаревский процесс. Теперь республики требуют еще больше независимости, "
+        QuestText="ГКЧП заметно повлиял Ново-Огаревский процесс. Теперь республики требуют еще больше независимости, "
         +"еще больше привелегий, чтобы что-то подписать. Что в такой ситуации делать?";        
-        Sprite ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
+        ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
         //Общее для всех вариантов
         
         
-        byte b = 0;
+        b = 0;
         
 
         DisionText[b]="Нужно сохранить СССР... по крайней мере его границы";
@@ -514,16 +220,26 @@ public class Events : MonoBehaviour
         DisionReq[b]="Решимость Русского Медведя (Требований нет)";
         DisionLead[b]="OnlyRussia"; 
         
+       
+        SetThatQuest();
 
+
+
+        
+        
+
+
+    }
+
+    void SetThatQuest(){
+
+        b+=1;
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
         g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
-        
-        b+=1;
-        //Проход по тоглам
-        
+
         for(byte i=1;i<=6;i++)
         {
             //Debug.Log("Answer"+i.ToString());
@@ -559,25 +275,17 @@ public class Events : MonoBehaviour
             else {
                 g.Answer[i-1].SetActive(false);
             }
-            
-
-
-
-               
-        
-        
         
         }
 
 
 
-        
-        
 
 
+
+
+        
     }
-
-
 
 
 
