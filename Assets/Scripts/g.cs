@@ -54,9 +54,14 @@ public static class g
     public static int Year = 1991;
     public static int Month = 8;
     public static int Part = 4;
+    public static string DateAll="1991.8.(4)";
     public static Text DateText = GameObject.Find("Date").GetComponent<Text>();
 
+    // Дата - добавление ивента
+    public static Dictionary<string,string> DateEvent= new Dictionary<string,string>{
+    {"1991.9.(1)","SovietCollapseStart"}
 
+    };
 
     // Меню квеста
     public static GameObject QuestMenu = GameObject.Find("QuestMenu");

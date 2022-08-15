@@ -119,9 +119,17 @@ public class Functions : MonoBehaviour
         g.Year += 1;
         }
     }
-    g.DateText.text = g.Year + "." + g.Month + ".(" + g.Part + ").";
+    g.DateAll= g.Year + "." + g.Month + ".(" + g.Part + ")";
+    g.DateText.text = g.DateAll;
+
+    Debug.Log("Дата для передачи: "+ g.DateAll);
+    if (g.DateEvent.ContainsKey(g.DateAll))
+    { 
+        Debug.Log("Есть ключ "+ g.DateAll);
+        g.QC.AddQuest(g.DateEvent[g.DateAll]);
+
     }
-    
+    }
 
 
 
