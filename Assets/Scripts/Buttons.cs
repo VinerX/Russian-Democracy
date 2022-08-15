@@ -64,7 +64,7 @@ public class Buttons : MonoBehaviour
         g.AnswerPanel.SetActive(false);
         g.QuestPanel.SetActive(true);
         g.QuestCount.GetComponent<Text>().text="Квест 1/"+g.QuestToSolve;
-        
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено 0/{g.QuestGroup.Count}";
         
         g.Screens.GetComponent<Transform>().Find("QuestMenu").gameObject.SetActive(true);
         g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(false);
@@ -85,6 +85,7 @@ public class Buttons : MonoBehaviour
     public void Toggle1(){
         int AnserId=1;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -95,12 +96,14 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
         
         }
     }
     public void Toggle2(){
         int AnserId=2;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -110,6 +113,7 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
         
         }
         
@@ -117,6 +121,7 @@ public class Buttons : MonoBehaviour
     public void Toggle3(){
         int AnserId=3;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -126,6 +131,7 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
         
         }
         
@@ -134,6 +140,7 @@ public class Buttons : MonoBehaviour
     public void Toggle4(){
         int AnserId=4;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -143,6 +150,7 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
         
         }
         
@@ -151,6 +159,7 @@ public class Buttons : MonoBehaviour
     public void Toggle5(){
         int AnserId=5;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -160,6 +169,7 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
         
         }
        
@@ -168,6 +178,7 @@ public class Buttons : MonoBehaviour
     public void Toggle6(){
         int AnserId=6;
         string Res;
+        g.ResultNFor1[g.QuestGroup.IndexOf(g.QuestNow)]=AnserId;
         g.ResultDict.TryGetValue("Answer"+AnserId.ToString(), out Res);
         g.ResultFor1[g.QuestGroup.IndexOf(g.QuestNow)]=Res;
         OffTogles(AnserId);
@@ -177,6 +188,8 @@ public class Buttons : MonoBehaviour
         g.SolvedQuests.Add(g.QuestNow);        
         g.QuestToSolve-=1;
         g.Results+=1;
+        g.QuestSoldText.GetComponent<Text>().text=$"Решено {g.Results}/{g.QuestGroup.Count}";
+        
         
         }
        
@@ -231,12 +244,21 @@ public class Buttons : MonoBehaviour
         }
         g.QuestCount.GetComponent<Text>().text="Квест "+(QuestId+1).ToString()+"/"+g.QuestGroup.Count.ToString();
         OnTogglesInteract();
+        if (g.ResultNFor1[QuestId]!=0)
+        {   Debug.Log("Проверка: был ответ");
+            g.Answer[g.ResultNFor1[QuestId]-1].GetComponent<Toggle>().interactable=false;
+        }
     }
 
     public void NextQuest(){
         g.ResultDict.Clear(); 
         ShowQuestM();
         int QuestId = g.QuestGroup.IndexOf(g.QuestNow);
+        
+        
+        
+
+        
         
         Debug.Log("Итого квестов: "+ g.QuestGroup.Count.ToString());
         if (QuestId == g.QuestGroup.Count-1) { //Если край левый 
@@ -254,6 +276,10 @@ public class Buttons : MonoBehaviour
         }
         g.QuestCount.GetComponent<Text>().text="Квест "+(QuestId+1).ToString()+"/"+g.QuestGroup.Count.ToString();
         OnTogglesInteract();
+        if (g.ResultNFor1[QuestId]!=0)
+        {   Debug.Log("Проверка: был ответ");
+            g.Answer[g.ResultNFor1[QuestId]-1].GetComponent<Toggle>().interactable=false;
+        }
     }
 
     public void Finish(){
@@ -275,6 +301,7 @@ public class Buttons : MonoBehaviour
                     Debug.Log("Добавил элемент+" + g.ResultFor1[i]);
                     g.ResultGroup.Add(g.ResultFor1[i]);}
                 g.ResultFor1[i]="";
+                g.ResultNFor1[i]=0;
             }
 
 
@@ -319,20 +346,7 @@ public class Buttons : MonoBehaviour
                 g.ResultGroup.RemoveAt(0);
                 NextResult();
             }
-            //Попялся пустой ответ
-            // else {
-            //     g.ResultGroup.RemoveAt(0);
-                
-            //     Debug.Log("Резов осталось... "+g.Results.ToString());
-            //     if(g.ResultGroup.Count>0){ 
-            //        g.Results-=1;
-            //        g.Result.BroadcastMessage( g.ResultGroup[0]);
-            //        Debug.Log("Пересылаю... "+g.ResultGroup[0].ToString());
-            //        g.ResultGroup.RemoveAt(0); 
-                   
-            //     }
-            // }
-            
+        
             
         }
         else {

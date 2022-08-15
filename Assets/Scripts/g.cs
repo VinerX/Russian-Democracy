@@ -59,7 +59,7 @@ public static class g
 
     // Дата - добавление ивента
     public static Dictionary<string,string> DateEvent= new Dictionary<string,string>{
-    {"1991.9.(1)","SovietCollapseStart"}
+    {"1993.9.(1)","SovietCollapseStart"}
 
     };
 
@@ -72,6 +72,7 @@ public static class g
     public static GameObject QuestText = GameObject.Find("QuestText");
     public static GameObject QuestImage = GameObject.Find("QuestImage");
     public static GameObject QuestCount = GameObject.Find("QuestCount");
+    public static GameObject QuestSoldText = GameObject.Find("QuestSoldText");
     public static string[] QuestReq = new string[6];
     public static string[] QuestTip = new string[6];
     public static bool[] QuestOn = {true,true,true,true,true,true};
@@ -79,6 +80,13 @@ public static class g
 
     //Панель ответа
     public static GameObject AnswerPanel = GameObject.Find("AnswerPanel");
+    public static GameObject[] Answer = {
+    GameObject.Find("Answer1"),
+    GameObject.Find("Answer2"),
+    GameObject.Find("Answer3"),
+    GameObject.Find("Answer4"),
+    GameObject.Find("Answer5"),
+    GameObject.Find("Answer6")};
     public static GameObject AnswerTitle = GameObject.Find("AnswerTitle");
     public static GameObject TextRequires = GameObject.Find("TextRequires");
     public static GameObject TextTip = GameObject.Find("TextTip");
@@ -91,6 +99,7 @@ public static class g
     public static int Results = 0;
     public static List<string> ResultGroup = new List<string>();
     public static string[] ResultFor1 = new string[50];
+    public static int[] ResultNFor1 = new int[50];
     public static GameObject ResultPanel = GameObject.Find("ResultPanel");
     public static GameObject ResultTitle = GameObject.Find("ResultlTitle");
     public static GameObject ResultText = GameObject.Find("ResultText");

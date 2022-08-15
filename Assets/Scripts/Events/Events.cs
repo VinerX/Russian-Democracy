@@ -58,7 +58,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
@@ -152,7 +152,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
@@ -242,7 +242,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
@@ -334,7 +334,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
@@ -424,7 +424,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
@@ -544,7 +544,7 @@ public class Events : MonoBehaviour
             //Debug.Log("Answer"+i.ToString());
             if(i<=b) {
                 Transform Ans;
-                Ans = g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString() );
+                Ans = g.Answer[i-1].GetComponent<Transform>();
                 Ans.Find("AnswerText"+i.ToString()).GetComponent<Text>().text=DisionText[i-1];
                 g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
                 g.AnswerPanel.GetComponent<RectTransform>().Find("Answer"+i.ToString()).gameObject.SetActive(true);
