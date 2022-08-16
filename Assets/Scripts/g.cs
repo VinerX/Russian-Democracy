@@ -48,7 +48,7 @@ public static class g
     
     public static GameObject Screens = GameObject.Find("Screens");
     //
-
+    public static Text ST = GameObject.Find("StateName").GetComponent<Text>();
 
     //Даты 
     public static int Year = 1991;
