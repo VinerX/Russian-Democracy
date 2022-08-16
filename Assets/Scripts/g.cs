@@ -33,7 +33,7 @@ public static class g
     public static float[] polits = {50f,+1f};
     public static float[] hp = {25f,+1f};
     public static float[] popularity = {25f,0f};
-    public static float[] stress = {25f,11f};
+    public static float[] stress = {25f,-1f};
     public static float[] drinking = {25f,-1f};
     //Конец стат персонажа
 
@@ -123,12 +123,7 @@ public static class g
 
 
     // Ивент - крушение союза
-    public static int Opinion_Pribaltic=5;
-    public static int Opinion_Belarus=5;
-    public static int Opinion_Ukraine=5;
-    public static int Opinion_Moldavia=5;
-    public static int Opinion_Kavkaz=5;
-    public static int Opinion_Asia=5;
+    
 
 
 

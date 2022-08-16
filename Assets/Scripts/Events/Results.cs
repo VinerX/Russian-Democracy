@@ -99,28 +99,28 @@ public class Results : MonoBehaviour
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
     public void MakeFederation(){
-        g.ResultNow = "SaveUnion";
-        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
+        g.ResultNow = "MakeFederation";
+        g.ResultTitle.GetComponent<Text>().text= "Новая Федерация";
         g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
     public void MakeConfederacy(){
-        g.ResultNow = "SaveUnion";
+        g.ResultNow = "MakeConfederacy";
         g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
         g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
     public void MakeSNG(){
-        g.ResultNow = "SaveUnion";
-        g.ResultTitle.GetComponent<Text>().text= "Союзу быть!";
-        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
-        +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
+        g.ResultNow = "MakeSNG";
+        g.ResultTitle.GetComponent<Text>().text= "Новая реальность - СНГ";
+        g.ResultText.GetComponent<Text>().text = "Союз уже не спасти, республики уже вкусили независимости. Нашим дипломатам следует заключить полезные договора, наладить единое экономическое пространство. "
+        +" Также планируется создать Содружество Независимых Государств (СНГ)";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
     public void OnlyRussia(){
-        g.ResultNow = "SaveUnion";
+        g.ResultNow = "OnlyRussia";
         g.ResultTitle.GetComponent<Text>().text= "Россия сама по себе";
         g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";

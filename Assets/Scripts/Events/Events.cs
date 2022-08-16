@@ -222,21 +222,62 @@ public class Events : MonoBehaviour
         
        
         SetThatQuest();
-
-
-
-        
-        
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     void SetThatQuest(){
 
         b+=1;
         //Собственно установка
         g.QuestTitle.GetComponent<Text>().text=QuestTitle;
-        g.AnswerTitle.GetComponent<Text>().text=QuestTitle;
+       
         g.QuestText.GetComponent<Text>().text=QuestText;
         g.QuestImage.GetComponent<Image>().sprite=ImageSprite;
 
