@@ -7,6 +7,12 @@ public class ToGosStat : MonoBehaviour
         
         g.SaS.ScreensOff(false);
         GosStat.SetActive(true);
+        Ec.SetEcForStat();
         //g.SceneNow.SetActive(false);
     }
+
+
+
+
+
 }

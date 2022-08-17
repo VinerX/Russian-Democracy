@@ -9,10 +9,13 @@ public class Init : MonoBehaviour
     // Самое начало игры
     void Start()
     {
+    Ec.SetStartStat();
+    g.SaS.SetGrafics();
     g.SaS.ScreensOff(false);
     g.AnswerPanel.SetActive(false);
     g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
-    g.SaS.SetGrafics();
+    
+    
     for(byte i=0;i<50;i++){
         g.ResultFor1[i]="";     
             }

@@ -17,6 +17,9 @@ public class Functions : MonoBehaviour
     }
 
     public void SetChange(){
+        
+        
+        //Статы персонажа
         g.hp[0]+=g.hp[1];
         if (g.hp[0]>100f) g.hp[0]=100f;
         else if (g.hp[0]<25f) g.QC.AddQuest("DangerHp");
@@ -35,7 +38,10 @@ public class Functions : MonoBehaviour
         else if (g.popularity[0]>100f) g.popularity[0]=100f;
         
         g.polits[0]+=g.polits[1];
-        if (g.polits[0]<0f) g.polits[0]=0;
+        if (g.polits[0]<-100f) g.polits[0]=-100;
+        //Статы персонажа
+
+        Ec.SetEcForStat();
     }
 
 

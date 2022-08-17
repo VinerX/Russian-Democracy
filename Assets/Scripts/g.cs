@@ -26,6 +26,7 @@ public static class g
 
 
     //Статы
+    public static List<GameObject> Stats;
     // Если массив 1 - значение сейчас, 2 изменение за ход
     
     
@@ -55,7 +56,7 @@ public static class g
     public static int Year = 1991;
     public static int Month = 8;
     public static int Part = 4;
-    public static string DateAll="1991.8.(4)";
+    public static string DateAll="1991.8.(3)";
     public static Text DateText = GameObject.Find("Date").GetComponent<Text>();
 
     // Дата - добавление ивента
@@ -64,14 +65,14 @@ public static class g
         return new List<string>(){t1,t2,t3,t4};
     }
     
-
+    // Для задания квестов по дате
     public static Dictionary<string, List<string> > DateEvent = new Dictionary<string,List<string>>{
-    {"1991.9.(1)", SetList("SovietCollapseStart", "", "","")     }
+    {"1991.8.(4)", SetList("SovietCollapseStart", "", "","")     }
     };
 
-
+    // Для информирования
     public static Dictionary<string, List<string> > DateRusult= new Dictionary<string,List<string>>{
-    {"1991.9.(1)", SetList("", "Bob1", "Bob2","Bob3")     }
+    {"1991.9.(1)", SetList("", "", "","")     }
     };
 
 

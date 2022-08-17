@@ -83,7 +83,8 @@ public class CountryCollapse : MonoBehaviour
         if (!string.IsNullOrEmpty(CountryNow)){
         Opinion[CountryNow]+=5;
         GameObject.Find(CountryNow.ToString()+"Text").GetComponent<Text>().text = Opinion[CountryNow].ToString();
-
+        Ec.YearBalance-=5f;
+        //Ec.SetEcForStat();
         }
     }
 }
