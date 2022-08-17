@@ -182,7 +182,7 @@ public class Events : MonoBehaviour
     public void SovietCollapseStart(){
         g.QuestNow="SovietCollapseStart";
         QuestTitle="Союз трещит";
-        QuestText="ГКЧП заметно повлиял Ново-Огаревский процесс. Теперь республики требуют еще больше независимости, "
+        QuestText="ГКЧП заметно повлиял на Ново-Огаревский процесс. Теперь республики требуют еще больше независимости, "
         +"еще больше привелегий, чтобы что-то подписать. Что в такой ситуации делать?";        
         ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
         //Общее для всех вариантов

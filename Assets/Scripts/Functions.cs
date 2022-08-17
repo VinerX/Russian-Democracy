@@ -125,14 +125,47 @@ public class Functions : MonoBehaviour
     g.DateText.text = g.DateAll;
 
     Debug.Log("Дата для передачи: "+ g.DateAll);
+    
     if (g.DateEvent.ContainsKey(g.DateAll))
     { 
-        Debug.Log("Есть ключ "+ g.DateAll);
-        g.QC.AddQuest(g.DateEvent[g.DateAll]);
+        
+        foreach (var el in g.DateEvent[g.DateAll]){
+            if (el!="") g.QC.AddQuest(el);
+        }
+        //Debug.Log("Есть ключ "+ g.DateAll);
+        //g.QC.AddQuest(g.DateEvent[g.DateAll]);
 
     }
+
+      if (g.DateRusult.ContainsKey(g.DateAll))
+    { 
+        
+        foreach (var el in g.DateRusult[g.DateAll]){
+            if (el!="") g.QC.AddResult(el);
+        }
+        //Debug.Log("Есть ключ "+ g.DateAll);
+        //g.QC.AddQuest(g.DateEvent[g.DateAll]);
+
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    
 
 
 

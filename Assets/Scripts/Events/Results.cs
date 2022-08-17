@@ -101,7 +101,7 @@ public class Results : MonoBehaviour
     public void MakeFederation(){
         g.ResultNow = "MakeFederation";
         g.ResultTitle.GetComponent<Text>().text= "Новая Федерация";
-        g.ResultText.GetComponent<Text>().text = "Российским дипломатам предстоит нереальная задача по сохранению союза и возвращению республик под его фактическую юрисдикцию."
+        g.ResultText.GetComponent<Text>().text = "СССР "
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
@@ -126,8 +126,6 @@ public class Results : MonoBehaviour
         +" Конечно, государство будет уже не коммунистическое, но с теми же границами, что и у СССР";
         g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("EventImages/Union");
     }
-
-
 
 
 

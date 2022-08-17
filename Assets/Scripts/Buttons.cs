@@ -352,10 +352,11 @@ public class Buttons : MonoBehaviour
         else {
             g.SaS.SetChange();
             g.SaS.SetGrafics();
+            g.ResultGroup.Clear();
             g.SaS.DataPlus();
             g.Screens.GetComponent<Transform>().Find("ResultMenu").gameObject.SetActive(false);
             g.Screens.GetComponent<Transform>().Find("MainGame").gameObject.SetActive(true);
-            g.ResultGroup.Clear();
+            ;
             g.SaS.CheckDef();
             
         }

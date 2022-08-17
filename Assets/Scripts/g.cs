@@ -59,9 +59,19 @@ public static class g
     public static Text DateText = GameObject.Find("Date").GetComponent<Text>();
 
     // Дата - добавление ивента
-    public static Dictionary<string,string> DateEvent= new Dictionary<string,string>{
-    {"1991.9.(1)","SovietCollapseStart"}
 
+    static List<string> SetList(string t1,string t2, string t3, string t4){
+        return new List<string>(){t1,t2,t3,t4};
+    }
+    
+
+    public static Dictionary<string, List<string> > DateEvent = new Dictionary<string,List<string>>{
+    {"1991.9.(1)", SetList("SovietCollapseStart", "", "","")     }
+    };
+
+
+    public static Dictionary<string, List<string> > DateRusult= new Dictionary<string,List<string>>{
+    {"1991.9.(1)", SetList("", "Bob1", "Bob2","Bob3")     }
     };
 
 
