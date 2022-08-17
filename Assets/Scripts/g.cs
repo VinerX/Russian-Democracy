@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public static class g
 {
@@ -62,6 +63,11 @@ public static class g
     {"1991.9.(1)","SovietCollapseStart"}
 
     };
+
+
+    //Общее по интерфейсу
+    public static Scene SceneNow;
+
 
     // Меню квеста
     public static GameObject QuestMenu = GameObject.Find("QuestMenu");

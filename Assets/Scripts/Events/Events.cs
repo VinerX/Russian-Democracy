@@ -289,7 +289,8 @@ public class Events : MonoBehaviour
                 Ans = g.Answer[i-1].GetComponent<Transform>();
                 g.Answer[i-1].SetActive(true);
                 Ans.Find("AnswerText"+i.ToString()).gameObject.GetComponent<Text>().text=DisionText[i-1];
-                g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] ) ;
+                if (!g.ResultDict.ContainsKey( "Answer"+i.ToString() )   )
+                    g.ResultDict.Add( ("Answer"+i.ToString()), DisionLead[i-1] );
                 
                 g.QuestTip[i-1]=DisionTip[i-1];
                 g.QuestReq[i-1]=DisionReq[i-1];
