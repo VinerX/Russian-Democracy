@@ -225,7 +225,39 @@ public class Events : MonoBehaviour
     }
 
 
+    public void GKChP(){
+        g.QuestNow="GKChP";
+        QuestTitle="Что делать с Путчистами";
+        QuestText="Большинство путчистов находятся под стражей, хотя были и случаи самоубийств. Теперь необходимио решить, что собсвеннно делать с ними? "
+        +"Можно показать им прелести нового демократичного мира, и через пару месяцев амнистировать. Промежуточный вариант - тоже самое, но с запретом общественной деятельности. " +
+        "Можно и устроить показателное наказание, посадив их на десяток лет, однако это больно радикальный вариант."        ;
+        ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
+        //Общее для всех вариантов
+        
+        
+        b = 0;
+        
 
+        DisionText[b]="Скоро отпустим";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="GKChP1"; 
+
+        b+=1;
+        DisionText[b]="Будут на свободе, но в политику ни ногой";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="GKChP2"; 
+        
+        b+=1;
+        DisionText[b]="Пусть сидят в тюрьме";
+        DisionTip[b]="";
+        DisionReq[b]="";
+        DisionLead[b]="GKChP3"; 
+   
+       
+        SetThatQuest();
+    }
 
 
 

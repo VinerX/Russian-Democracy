@@ -130,8 +130,25 @@ public class Results : MonoBehaviour
 
 
 
+    public void GKChP1(){
+        g.ResultNow = "GKChP1";
+        g.ResultTitle.GetComponent<Text>().text= "Путчисты";
+        g.ResultText.GetComponent<Text>().text = "Вы позоботились, чтобы через некоторое время горе-бунтовщики были свободны";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
 
-
+    public void GKChP2(){
+        g.ResultNow = "GKChP2";
+        g.ResultTitle.GetComponent<Text>().text= "Путчисты";
+        g.ResultText.GetComponent<Text>().text = "Вы позоботились, чтобы через некоторое время горе-бунтовщики были свободны, но не участвовали в общественной деятельности";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
+    public void GKChP3(){
+        g.ResultNow = "GKChP3";
+        g.ResultTitle.GetComponent<Text>().text= "Путчисты";
+        g.ResultText.GetComponent<Text>().text = "Путчисты будут сидеть в тюрьме долго, по крайней мере пока не закончится вас срок...";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
 
 
 

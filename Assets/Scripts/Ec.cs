@@ -14,9 +14,19 @@ public static class Ec
     public static Text Stat3;
     
     public static void SetStartStat(){
-        Stat1 = GameObject.Find("Stat1").GetComponent<Text>();
-        Stat2= GameObject.Find("Stat2").GetComponent<Text>();
-        Stat3= GameObject.Find("Stat3").GetComponent<Text>();
+        
+        float[] F = new float[5];
+        F[0] = 164.1f;
+        g.Econom.Add("Income",F);
+
+        F[0] = 180.9f;
+        g.Econom.Add("Disincome",F);
+
+        F[0] = 180.9f-164.1f;
+        g.Econom.Add("Balance",F);
+
+
+
     }
 
     public static void EcChange(){
@@ -27,10 +37,10 @@ public static class Ec
 
     public static void SetEcForStat(){
         //byte n=1;
-        Stat1.text=$"Годовой доход - {YearIncome} млрд";
-        Stat2.text=$"Годовой расход - {YearDisIncome} млрд";
+        //Stat1.text=$"Годовой доход - {YearIncome} млрд";
+        //Stat2.text=$"Годовой расход - {YearDisIncome} млрд";
             
-        Stat3.text=$"Годовой баланс - {YearBalance} млрд";
+        //Stat3.text=$"Годовой баланс - {YearBalance} млрд";
         
         
         

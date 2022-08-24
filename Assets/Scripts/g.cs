@@ -27,6 +27,9 @@ public static class g
 
     //Статы
     public static List<GameObject> Stats;
+    //
+    public static Dictionary<string, float[] > Econom = new Dictionary<string, float[]>{};
+
     // Если массив 1 - значение сейчас, 2 изменение за ход
     
     
@@ -55,7 +58,7 @@ public static class g
     //Даты 
     public static int Year = 1991;
     public static int Month = 8;
-    public static int Part = 4;
+    public static int Part = 3;
     public static string DateAll="1991.8.(3)";
     public static Text DateText = GameObject.Find("Date").GetComponent<Text>();
 
@@ -67,7 +70,7 @@ public static class g
     
     // Для задания квестов по дате
     public static Dictionary<string, List<string> > DateEvent = new Dictionary<string,List<string>>{
-    {"1991.8.(4)", SetList("SovietCollapseStart", "", "","")     }
+    {"1991.8.(4)", SetList("SovietCollapseStart", "GKChP", "","")     }
     };
 
     // Для информирования
