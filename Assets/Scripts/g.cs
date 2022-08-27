@@ -70,7 +70,7 @@ public static class g
     
     // Для задания квестов по дате
     public static Dictionary<string, List<string> > DateEvent = new Dictionary<string,List<string>>{
-    {"1991.8.(4)", SetList("SovietCollapseStart", "GKChP", "","")     }
+    {"1991.8.(4)", SetList("SovietCollapseStart", "GKChP", "EndOfKPSS","")     }
     };
 
     // Для информирования

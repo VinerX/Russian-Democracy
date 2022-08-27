@@ -26,6 +26,10 @@ public class Events : MonoBehaviour
         QuestText="Доктора подняли тревогу. Ваше состояние критическое"+
         " - еще чуть-чуть, и тело откажет. Какие действия следует принять?";
         ImageSprite = Resources.Load<Sprite>("Backgrounds/stress");
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         DisionText[b]="Лечь в больницу";
         DisionTip[b]="Ваша политическая власть ослабнет, но здоровье вы поправите";
@@ -54,6 +58,10 @@ public class Events : MonoBehaviour
         QuestText="Остановитесь. Хватит пить водку. Вы так долго не протянете";
         ImageSprite = Resources.Load<Sprite>("Backgrounds/Drinking");
         
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         DisionText[b]="Ладно, недельку трезвым побудем...";
         DisionTip[b]="-Алкоголизм, + стресс";
@@ -86,6 +94,10 @@ public class Events : MonoBehaviour
 
 
 
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         DisionText[b]="Заплатим телевидению ";
         DisionTip[b]="-бюджет администрации президента, +популярность";
@@ -117,6 +129,10 @@ public class Events : MonoBehaviour
 
 
 
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         DisionText[b]="Рюмочку!";
         DisionTip[b]="-Стресс, -Здоровье, +Алкоголизм";
@@ -142,7 +158,14 @@ public class Events : MonoBehaviour
         ImageSprite = Resources.Load<Sprite>("Backgrounds/Rest");
         //Общее для всех вариантов
         
-        
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         
 
@@ -188,19 +211,33 @@ public class Events : MonoBehaviour
         //Общее для всех вариантов
         
         
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
-        
-
         DisionText[b]="Нужно сохранить СССР... по крайней мере его границы";
         DisionTip[b]="";
         DisionReq[b]="Очень сложная задача. Нужны отношения 95 со всеми выбранными республиками";
         DisionLead[b]="SaveUnion"; 
+        if (5>3) { 
+            DisionOn[b]=false;
+            DisionText[b]="СССР мы спасать не будем.";
+            DisionTip[b]="Ельцин буквально недавно выступил против ГКЧП, чьми лозунгами было спасение союза...";
+
+        }
+        
 
         b+=1;
         DisionText[b]="Из республик должна получится неплохая федерация ССГ";
         DisionTip[b]="";
         DisionReq[b]="Задача средней сложности, нужно 75 отношений со всеми выбранными ресбуликами";
         DisionLead[b]="MakeFederation"; 
+        if (5>3) { 
+            DisionOn[b]=false;
+            DisionText[b]="СССР, даже как федерацию, мы спасать не будем.";
+            DisionTip[b]="Ельцин буквально недавно выступил против ГКЧП, чьми лозунгами было спасение союза...";       
+        }
         
         b+=1;
         DisionText[b]="Конфедерация - наш компромисс с республиками ССГ";
@@ -235,6 +272,10 @@ public class Events : MonoBehaviour
         //Общее для всех вариантов
         
         
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
         b = 0;
         
 
@@ -259,9 +300,45 @@ public class Events : MonoBehaviour
         SetThatQuest();
     }
 
+   
 
 
+     public void EndOfKPSS(){
+        g.QuestNow="EndOfKPSS";
+        QuestTitle="Запрет компартии";
+        QuestText="В некоторых регионах нашей страны члены компартии поддержали путч и проигнорировали указы президента собственной страны. "
+        +"Председателей исполкомов вы уже сняли с должностей, и сейчас самое время нанести еще один удар по коммунизму в лице коммунистической партии.";
+        ImageSprite = Resources.Load<Sprite>("EventImages/Special_Belovej");
+        //Общее для всех вариантов
+        
+        
+        for (int i = 0; i < DisionOn.Length; i++)
+        {
+            DisionOn[i]=true;
+        }
+        b = 0;
+        
 
+        DisionText[b]="Ничего не делать";
+        DisionTip[b]="Компартия продолжит свою деятельность";
+        DisionReq[b]="";
+        DisionLead[b]="None"; 
+
+        b+=1;
+        DisionText[b]="Приостановить деятельность";
+        DisionTip[b]="Дело уйдет к прокуратуру РСФСР, и будет зависеть от ей решения";
+        DisionReq[b]="";
+        DisionLead[b]="EndOfKPSS"; 
+        
+        b+=1;
+        DisionText[b]="Полный запрет";
+        DisionTip[b]="Достаточно опасный вариант, так как в стране еще много людей левых взглядов. Суд и Парламент, вероятно, будут против.";
+        DisionReq[b]="";
+        DisionLead[b]="EndOfKPSS2"; 
+   
+       
+        SetThatQuest();
+    }
 
 
 
