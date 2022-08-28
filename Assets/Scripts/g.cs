@@ -29,6 +29,11 @@ public static class g
     public static List<GameObject> Stats;
     //
     public static Dictionary<string, float[] > Econom = new Dictionary<string, float[]>{};
+    public static List<string> EcTypes= new List<string>{"APK","Maining","LightInd","HeavyInd","ArmyInd","Chem","Building","Servises","Infrastracture","Innovation"  };
+    public static float TaxEffectivity=0.85f;
+    public static float Corruption=0.25f;
+    public static float Competitiveness=0.45f;
+    public static float TradePower=0.35f;
 
     // Если массив 1 - значение сейчас, 2 изменение за ход
     
@@ -139,6 +144,12 @@ public static class g
     //new List<GameObject>();
 
    
+
+
+    //Госстат
+    public static GameObject GosStatMenu = GameObject.Find("GosStat");
+    public static GameObject MainFinStat = GameObject.Find("MainFinStat");
+    
 
 
 

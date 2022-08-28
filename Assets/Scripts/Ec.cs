@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public static class Ec
 {
-    public static float YearIncome=246.4f;
-    public static float YearDisIncome=266.2f;
-    public static float YearBalance=YearIncome-YearDisIncome;
+    public static float Income=164.1f;
+    public static float DisIncome=180.9f;
+    public static float Balance=Income-DisIncome;
 
-    public static Text Stat1;
-    public static Text Stat2;
-    public static Text Stat3;
+    public static Text Stat1= g.MainFinStat.GetComponent<Transform>().Find("StatIncome").gameObject.GetComponent<Text>();
+    public static Text Stat2= g.MainFinStat.GetComponent<Transform>().Find("StatDisincome").gameObject.GetComponent<Text>();
+    public static Text Stat3= g.MainFinStat.GetComponent<Transform>().Find("StatBalance").gameObject.GetComponent<Text>();
     
     public static void SetStartStat(){
-        float[] F = new float[5];
+        
         void AddSphere(string name, byte allpower, byte PrivSob, byte GosCorp, byte GosSob){
+            float[] F = new float[5];
             F[0]=allpower;
             F[1]=PrivSob;
             F[2]=GosCorp;
@@ -24,33 +25,31 @@ public static class Ec
         }
 
 
-        
-        
-        F[0] = 164.1f;
-        g.Econom.Add("Income",F);
-
-        F[0] = 180.9f;
-        g.Econom.Add("Disincome",F);
-
-        F[0] = 180.9f-164.1f;
-        g.Econom.Add("Balance",F);
-
-
-
-
 
         // Сферы экономики
-        AddSphere("APK",30,5,10,15);
-        AddSphere("Maining",30,5,10,15);
+        AddSphere("APK",50,5,20,25);
+        AddSphere("Maining",50,0,0,50);
         AddSphere("LightInd",30,5,10,15);
-        AddSphere("HeavyInd",30,5,10,15);
-        AddSphere("ArmyInd",30,5,10,15);
-        //AddSphere("APK",30,5,10,15);
+        AddSphere("HeavyInd",45,0,0,45);
+        AddSphere("ArmyInd",65,0,0,65);
         AddSphere("Chem",10,0,0,10);
-        AddSphere("Building",30,5,10,15);
-        AddSphere("Servises",30,5,10,15);
-        AddSphere("Infrastracture",30,5,10,15);
-        AddSphere("Innovation",30,5,10,15);
+        AddSphere("Building",30,5,0,25);
+        AddSphere("Servises",30,15,10,5);
+        AddSphere("Infrastracture",40,5,10,25);
+        AddSphere("Innovation",0,0,0,0);
+
+
+
+
+
+
+
+        //графика
+        Stat1.text="Годовой доход - " + Ec.Income + " млрд";
+        Stat2.text="Годовой расход - " + Ec.DisIncome + " млрд";
+        float f;
+        
+        Stat3.text="Годовой баланс - " + (Ec.Income-Ec.DisIncome) + " млрд";    
 
 
 
@@ -71,23 +70,15 @@ public static class Ec
 
 
     public static void EcChange(){
-        YearBalance=YearIncome-YearDisIncome;
+        //YearBalance=YearIncome-YearDisIncome;
 
 
     }
 
     public static void SetEcForStat(){
-        //byte n=1;
-        //Stat1.text=$"Годовой доход - {YearIncome} млрд";
-        //Stat2.text=$"Годовой расход - {YearDisIncome} млрд";
-            
-        //Stat3.text=$"Годовой баланс - {YearBalance} млрд";
+        float f;
         
-        
-        
-        //GameObject.Find($"Stat{n}").GetComponent<Text>.text=YearIncome.ToString;
-
-        // for(byte i;i<10;i++)
+   
 
 
         

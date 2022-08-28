@@ -39,11 +39,45 @@ public class Functions : MonoBehaviour
         
         g.polits[0]+=g.polits[1];
         if (g.polits[0]<-100f) g.polits[0]=-100;
+        
         //Статы персонажа
+
+
+
+        //Сферы экономики
+        float IndIncomeAll=0;
+        foreach (string item in g.EcTypes)
+        {
+            
+            EcResults(item);
+        }
+        //Debug.Log("Всего с индустрии: "+IndIncomeAll);
+
+
+
+
+
+
+
+
 
         Ec.SetEcForStat();
     }
 
+
+    public void EcResults(string IndType){
+        float r=0;
+        if (IndType!="ArmyInd"){
+        r+= g.TaxEffectivity*((float)g.Econom[IndType][1])*g.Competitiveness;
+        r+= g.TaxEffectivity*((float)g.Econom[IndType][2])*g.Competitiveness*0.85f*(g.Corruption+0.2f);
+        r+= g.TaxEffectivity*((float)g.Econom[IndType][3])*g.Competitiveness*0.65f*(g.Corruption+0.1f);
+        Debug.Log("Доход "+IndType+" = "+r);
+        Ec.Income+=r;
+        //IndIncomeAll+=r;
+        }
+        g.Corruption+=g.Econom[IndType][2]*0.02f;
+        g.Corruption+=g.Econom[IndType][3]*0.01f;
+    }
 
 
     public void ScreensOff(bool active) {

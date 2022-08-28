@@ -12,7 +12,7 @@ public class ButtonR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("RRR");
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Buttons.GetComponent<Buttons>().BroadcastMessage( "Finish");
