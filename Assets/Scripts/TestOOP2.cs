@@ -1,0 +1,1 @@
+//person Zuganov = new person();

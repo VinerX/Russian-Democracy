@@ -153,6 +153,35 @@ public class Results : MonoBehaviour
 
 
 
+    public void EndOfKPSS(){
+        g.ResultNow = "EndOfKPSS";
+        g.ResultTitle.GetComponent<Text>().text= "Конец КПСС";
+        g.ResultText.GetComponent<Text>().text = "Вы издали указ о приостановке деятельности КПСС на территории РСФСР. Вскоре Парламент и прокуратура с ним ознакосятся.";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
+    public void EndOfKPSS2(){
+        g.ResultNow = "EndOfKPSS2";
+        g.ResultTitle.GetComponent<Text>().text= "Конец КПСС";
+        g.ResultText.GetComponent<Text>().text = "Вы издали указ о полном запрете деятельности КПСС на территории РСФСР. Вскоре Парламент и прокуратура с ним ознакосятся.";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
+
+
+    public void Gorbachev1(){
+        g.ResultNow = "Gorbachev1";
+        g.ResultTitle.GetComponent<Text>().text= "Доеверие Горбачева";
+        g.ResultText.GetComponent<Text>().text = "Несмотря на фактическую слабость Горбачева, вы заявили о продолжении сотрудничества с Горбачевым. Он положительно отозвался на вашу речь, а некоторые руководители республик даже счита.т, что теперь у союза больше шансов выжить. ";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+       
+    }
+    public void Gorbachev2(){
+        g.ResultNow = "Gorbachev2";
+        g.ResultTitle.GetComponent<Text>().text= "Речь об оставке президента СССР";
+        g.ResultText.GetComponent<Text>().text = "Уважаемый М.С.Горбачев! Обращаюсь к вам как к президенту СССР... Вы не справилсиь со своими обязанностями, экономика трещит, республики уходят... Требую вашей отставки с последующими выборами. ";
+        g.ResultImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Backgrounds/GKCHP");
+    }
+    
+
 
 
 

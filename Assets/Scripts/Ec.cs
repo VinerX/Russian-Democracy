@@ -37,6 +37,7 @@ public static class Ec
         AddSphere("Servises",30,15,10,5);
         AddSphere("Infrastracture",40,5,10,25);
         AddSphere("Innovation",0,0,0,0);
+        AddSphere("Energetic",55,0,0,55);
 
 
 
